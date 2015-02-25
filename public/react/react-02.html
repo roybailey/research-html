@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+    <title>React Sample</title>
+    <link rel="stylesheet" href="assets/css/base.css" />
+</head>
+<body>
+<h1>Using createElement</h1>
+<div id="container">
+    <p>
+        If you can see this, React is not working right.
+    </p>
+</div>
+
+<script src="assets/react/react.js"></script>
+<script src="assets/react/JSXTransformer.js"></script>
+<script type="text/jsx">
+    // ------------------------------------------------------------
+    // Create a basic class to render HTML with data parameter
+    // ------------------------------------------------------------
+    var HelloWorld = React.createClass({
+        displayMessage: "Hello World from React.createElement parameter",
+        render: function() {
+            return React.createElement("div", null, this.displayMessage);
+        }
+    });
+    React.render(
+            <HelloWorld />,
+            document.getElementById('container')
+    );
+</script>
+
+</body>
+</html>

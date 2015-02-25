@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+    <title>React Sample</title>
+    <link rel="stylesheet" href="assets/css/base.css" />
+</head>
+<body>
+<h1>Ryan Clark's basic menu</h1>
+<div id="container">
+    <p>
+        If you can see this, React is not working right.
+    </p>
+</div>
+
+<script src="assets/react/react.js"></script>
+<script src="assets/react/JSXTransformer.js"></script>
+<script type="text/jsx">
+    // ------------------------------------------------------------
+    // Menu System to demonstrate features
+    // ------------------------------------------------------------
+    var navigationConfig = [
+        {
+            href: 'http://ryanclark.me',
+            text: 'Ryan Clark'
+        },
+        {
+            href: 'http://roybailey.biz',
+            text: 'Roy Bailey'
+        }
+    ];
+
+    var Navigation = React.createClass({
+        getInitialState: function () {
+            return {
+                openDropdown: -1
+            };
+        },
+        getDefaultProps: function () {
+            return {
+                config: []
+            }
+        },
+        propTypes: {
+            config: React.PropTypes.array
+        },
+        render: function () {
+            var config = this.props.config;
+
+            var items = config.map(function (item) {
+                return (
+                        <li className="navigation__item">
+                            <a className="navigation__link" href={ item.href }>
+                        { item.text }
+                            </a>
+                        </li>
+                );
+            });
+
+            return (
+                    <div className="navigation">
+                { items }
+                    </div>
+            );
+        }
+    });
+
+    React.render(<Navigation config={ navigationConfig } />,
+            document.getElementById('container'));
+</script>
+
+</body>
+</html>

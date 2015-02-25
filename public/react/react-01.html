@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+    <title>React Sample</title>
+    <link rel="stylesheet" href="assets/css/base.css" />
+</head>
+<body>
+<h1>Basic Example with JSX</h1>
+<div id="container">
+    <p>
+        If you can see this, React is not working right.
+    </p>
+</div>
+
+<script src="assets/react/react.js"></script>
+<script src="assets/react/JSXTransformer.js"></script>
+<script type="text/jsx">
+    // ------------------------------------------------------------
+    // Create a basic class to render hard-coded HTML
+    // ------------------------------------------------------------
+    var HelloWorld = React.createClass({
+        render: function() {
+            return <div>Hello World</div>;
+        }
+    });
+    // ------------------------------------------------------------
+    // Render instance of component and apply/replace in document using id
+    // ------------------------------------------------------------
+    React.render(
+            <HelloWorld />,
+            document.getElementById('container')
+    );
+</script>
+
+</body>
+</html>

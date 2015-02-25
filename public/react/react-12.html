@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+    <title>React Sample - D3 and React</title>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+        body, html {
+            font: 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<h1>D3 and React showing basic chart</h1>
+<div id="container">
+    <p>
+        If you can see this, React is not working right.
+    </p>
+</div>
+
+<script src="assets/react/react.js"></script>
+<script src="assets/react/JSXTransformer.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.3.13/d3.js"></script>
+
+<script type="text/jsx">
+    // ------------------------------------------------------------
+    // Menu System to demonstrate features
+    // ------------------------------------------------------------
+    var Chart = React.createClass({
+        render: function() {
+            return (
+                    <svg width={this.props.width} height={this.props.height}>{this.props.children}</svg>
+            );
+        }
+    });
+
+    var Bar = React.createClass({
+        getDefaultProps: function() {
+            return {
+                width: 0,
+                height: 0,
+                offset: 0
+            }
+        },
+
+        render: function() {
+            return (
+                    <rect fill={this.props.color}
+                            width={this.props.width} height={this.props.height}
+                            x={this.props.offset} y={this.props.availableHeight - this.props.height} />
+            );
+        }
+    });
+
+    var DataSeries = React.createClass({
+        getDefaultProps: function() {
+            return {
+                title: '',
+                data: []
+            }
+        },
+
+        render: function() {
+            var props = this.props;
+
+            var yScale = d3.scale.linear()
+                    .domain([0, d3.max(this.props.data)])
+                    .range([0, this.props.height]);
+
+            var xScale = d3.scale.ordinal()
+                    .domain(d3.range(this.props.data.length))
+                    .rangeRoundBands([0, this.props.width], 0.05);
+
+            var bars = _.map(this.props.data, function(point, i) {
+                return (
+                        <Bar height={yScale(point)} width={xScale.rangeBand()} offset={xScale(i)} availableHeight={props.height} color={props.color} key={i} />
+                )
+            });
+
+            return (
+                    <g>{bars}</g>
+            );
+        }
+    });
+
+    var BarChart = React.createClass({
+        render: function() {
+            return (
+                    <Chart width={this.props.width} height={this.props.height}>
+                        <DataSeries data={[ 30, 10, 5, 8, 15, 10 ]} width={this.props.width} height={this.props.height} color="cornflowerblue" />
+                    </Chart>
+            );
+        }
+    });
+
+    React.render(<BarChart width={600} height={300} />,
+            document.getElementById('container'));
+</script>
+
+</body>
+</html>

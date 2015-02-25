@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+    <title>React Sample</title>
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <style>
+        .navigation__dropdown {
+            display: none;
+        }
+
+        .navigation__dropdown--open {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<h1>Ryan Clark's menu dropdown structure</h1>
+<div id="container">
+    <p>
+        If you can see this, React is not working right.
+    </p>
+</div>
+
+<script src="assets/react/react.js"></script>
+<script src="assets/react/JSXTransformer.js"></script>
+<script type="text/jsx">
+    // ------------------------------------------------------------
+    // Menu System to demonstrate features
+    // ------------------------------------------------------------
+    var navigationConfig = [
+        {
+            href: 'http://ryanclark.me',
+            text: 'Someone else',
+            children: [
+                {
+                    href: 'http://ryanclark.me/how-angularjs-implements-dirty-checking/',
+                    text: 'Angular Dirty Checking'
+                },
+                {
+                    href: 'http://ryanclark.me/getting-started-with-react/',
+                    text: 'React'
+                }
+            ]
+        },
+        {
+            href: 'http://roybailey.biz',
+            text: 'Roy Bailey',
+            children: [
+                {
+                    href: 'http://roybailey.biz/blog/technical-interviews',
+                    text: 'Technical Interviews'
+                },
+                {
+                    href: 'http://roybailey.biz/blog/node-cassandra',
+                    text: 'Node Cassandra'
+                }
+            ]
+        }
+    ];
+
+    var Navigation = React.createClass({
+        getInitialState: function () {
+            return {
+                openDropdown: -1
+            };
+        },
+        // custom methods to change drop down state
+        openDropdown: function (id) {
+            this.setState({
+                openDropdown: id
+            });
+        },
+        closeDropdown: function () {
+            this.setState({
+                openDropdown: -1
+            });
+        },
+        getDefaultProps: function () {
+            return {
+                config: []
+            }
+        },
+        propTypes: {
+            config: React.PropTypes.array
+        },
+        render: function () {
+            var config = this.props.config;
+
+            var items = config.map(function (item, index) {
+                var children, dropdown;
+                if (item.children) {
+                    children = item.children.map(function (child) {
+                        return (
+                                <li className="navigation__dropdown__item">
+                                    <a className="navigation__dropdown__link" href={ child.href }>
+                                { child.text }
+                                    </a>
+                                </li>
+                        );
+                    });
+
+                    var dropdownClass = 'navigation__dropdown';
+                    if (this.state.openDropdown === index) {
+                        dropdownClass += ' navigation__dropdown--open';
+                    }
+
+                    console.log(this.state.openDropdown, index);
+
+                    dropdown = (
+                            <ul className={ dropdownClass }>
+                        { children }
+                            </ul>
+                    );
+                }
+                return (
+                        <li className="navigation__item" onMouseOut={ this.closeDropdown } onMouseOver={ this.openDropdown.bind(this, index) }>
+                            <a className="navigation__link" href={ item.href }>
+                        { item.text }
+                            </a>
+
+                    { dropdown }
+                        </li>
+                );
+            }, this);
+
+            return (
+                    <div className="navigation">
+                { items }
+                    </div>
+            );
+        }
+    });
+
+    React.render(<Navigation config={ navigationConfig } />,
+            document.getElementById('container'));
+</script>
+
+</body>
+</html>

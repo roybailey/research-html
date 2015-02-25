@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+    <title>React Sample</title>
+    <link rel="stylesheet" href="assets/css/base.css" />
+</head>
+<body>
+<h1>Annoying popups to show the lifecycle at work</h1>
+<div id="container">
+    <p>
+        If you can see this, React is not working right.
+    </p>
+</div>
+
+<script src="assets/react/react.js"></script>
+<script src="assets/react/JSXTransformer.js"></script>
+<script type="text/jsx">
+    // ------------------------------------------------------------
+    // Lifecyle members
+    // ------------------------------------------------------------
+    var FriendsContainer = React.createClass({
+        getInitialState: function(){
+            alert('In getInitialState');
+            return {
+                name: 'Tyler McGinnis'
+            }
+        },
+
+        // Invoked once before first render
+        componentWillMount: function(){
+            // Calling setState here does not cause a re-render
+            alert('In Component Will Mount');
+        },
+
+
+        // Invoked once after the first render
+        componentDidMount: function(){
+            // You now have access to this.getDOMNode()
+            alert('In Component Did Mount');
+        },
+
+        // Invoked whenever there is a prop change
+        // Called BEFORE render
+        componentWillReceiveProps: function(nextProps){
+            // Not called for the initial render
+            // Previous props can be accessed by this.props
+            // Calling setState here does not trigger an additional re-render
+            alert('In Component Will Receive Props');
+        },
+
+        // Called IMMEDIATELY before a component is unmounted
+        componentWillUnmount: function(){},
+
+
+        render: function(){
+            return (
+                    <div>
+                        Hello, {this.state.name}
+                    </div>
+            )
+        }
+    });
+
+    React.render(<FriendsContainer name="Tyler"/>,
+            document.getElementById('container'));
+</script>
+
+</body>
+</html>

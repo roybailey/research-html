@@ -1,0 +1,8 @@
+{
+    "people": [
+        {"name" : "Anna",  "type" : "F", "desc" : "Loud"   }
+       ,{"name" : "Bobby", "type" : "M", "desc" : "Fat"    }
+       ,{"name" : "Colin", "type" : "M", "desc" : "Sporty" }
+       ,{"name" : "Doris", "type" : "F", "desc" : "Smiley" }
+    ]
+}
