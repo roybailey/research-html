@@ -1,0 +1,53 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "Data",
+   "children": [
+    { "name": "cluster" },
+    { "name": "graph" },
+    { "name": "optimization" }
+   ]
+  },
+  {
+   "name": "animate",
+   "children": [
+    {"name": "ArrayInterpolator", "size": 1983},
+    {"name": "ColorInterpolator", "size": 2047},
+    {"name": "DateInterpolator", "size": 1375},
+    {"name": "Interpolator", "size": 8746},
+    {"name": "MatrixInterpolator", "size": 2202},
+    {"name": "NumberInterpolator", "size": 1382},
+    {"name": "ObjectInterpolator", "size": 1629},
+    {"name": "PointInterpolator", "size": 1675},
+    {"name": "RectangleInterpolator", "size": 2042}
+   ]
+  },
+  {
+   "name": "data",
+   "children": [
+    {"name": "DataField", "size": 1759},
+    {"name": "DataSchema", "size": 2165},
+    {"name": "DataSet", "size": 586},
+    {"name": "DataSource", "size": 3331},
+    {"name": "DataTable", "size": 772},
+    {"name": "DataUtil", "size": 3322}
+   ]
+  },
+  {
+   "name": "display",
+   "children": [
+    {"name": "DirtySprite", "size": 8833},
+    {"name": "LineSprite", "size": 1732},
+    {"name": "RectSprite", "size": 3623},
+    {"name": "TextSprite", "size": 10066}
+   ]
+  },
+  {
+   "name": "flex",
+   "children": [
+    {"name": "FlareVis", "size": 4116}
+   ]
+  }
+ ]
+}
