@@ -12,11 +12,10 @@ what | description
 
 #### Sample pages
 
-[Graph Sample](http://roybailey.github.io/research-html/public/charts/flare.html)
-[Org Chart](http://roybailey.github.io/research-html/public/charts/org-chart.html)
-[react](http://roybailey.github.io/research-html/public/react/index.html)
-[jquery](http://roybailey.github.io/research-html/public/jquery/sample.html)
-[SVG](http://roybailey.github.io/research-html/public/svg/svg.html)
+* [Graph Sample](http://roybailey.github.io/research-html/public/charts/flare.html)
+* [react](http://roybailey.github.io/research-html/public/react/index.html)
+* [jquery](http://roybailey.github.io/research-html/public/jquery/sample.html)
+* [SVG](http://roybailey.github.io/research-html/public/svg/svg.html)
 
 
 
