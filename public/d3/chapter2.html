@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<style>
+    #borderdiv {
+        width: 200px;
+        height: 50px;
+        border: 1px solid darkslategray;
+    }
+</style>
+<body>
+<script src="d3/d3.v3.js" type="text/javascript"></script>
+
+<svg/>
+
+<script>
+
+    // simple array iteration and append div
+    var someNumbers = [15, 50, 22, 8, 100, 10];
+
+    d3.select("svg")
+            .selectAll("rect")
+            .data(someNumbers)
+            .enter()
+            .append("rect")
+            .attr("width", 10)
+            .attr("height", function (d) {
+                return d;
+            })
+            .style("fill", "blue")
+            .style("stroke", "red")
+            .style("stroke-width", "1px")
+            .style("opacity", ".25")
+            .attr("x", function (d, i) {
+                return i * 10;
+            })
+            .attr("y", function (d) {
+                return 100-d;
+            });
+
+</script>
+
+</body>
+</html>

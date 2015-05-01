@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+</style>
+<body>
+<ol id="rota">
+</ol>
+<script src="d3/d3.v3.js" type="text/javascript"></script>
+<script>
+
+    d3.csv("rota.csv", function (dataset) {
+        console.log(JSON.stringify(dataset));
+
+        d3.select("body")
+                .select("ol#rota")
+                .selectAll("li")
+                .data(dataset)
+                .enter()
+                .append("li")
+                .html(function (d, i) {
+                    console.log(JSON.stringify(d));
+                    var result = [];
+                    result.push(d3.select(this)
+                            .append("span")
+                            .text(d.apac));
+                    result.push(d3.select(this)
+                            .append("span")
+                            .text(d.emea));
+                    return result;
+                });
+    });
+
+</script>

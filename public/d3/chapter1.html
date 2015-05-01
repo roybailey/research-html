@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<style>
+    #borderdiv {
+        width: 200px;
+        height: 50px;
+        border: 1px solid darkslategray;
+    }
+</style>
+<body>
+<script src="d3/d3.v3.js" type="text/javascript"></script>
+
+<script>
+    // simple append html
+    d3.select("body")
+            .append("div").style("border","1px solid black").html("Hello D3!");
+</script>
+
+<div id="borderdiv"></div>
+
+<script>
+
+    // simple array iteration and append div
+    var someNumbers = [100, 200, 300, 400, 500, 600];
+
+    d3.select("body")
+            .selectAll("div#borderdiv")
+            .data(someNumbers)
+            .enter()
+            .append("div")
+            .each(function (d, i) {
+                d3.select(this).append("span").style("color", "blue").html(i + ") ");
+                d3.select(this).append("span").style("color", "red").html(d);
+            });
+
+</script>
+
+<div id="vizcontainer">
+    <svg style="width: 500px;height: 500px;border: 1px solid lightgray" />
+</div>
+
+<script>
+
+    d3.select("div#vizcontainer")
+            .style("background-color","lightblue")
+            .style("font-size","24px")
+            .attr("id","newDiv")
+            .attr("class","d3div")
+            .on("click", function() {
+                console.log("You clicked a div");
+            });
+
+</script>
+
+</body>
+</html>
