@@ -1,0 +1,36 @@
+<html>
+<head>
+    <style>
+        .box {
+            margin-top: 5em;
+            width: 15em;
+            height: 8em;
+            font-size: 1.2em;
+            font-family: "Montserrat";
+            color: white;
+            background-color: #464646;
+            transition: width 2s;
+        }
+
+        span {
+            display: none; /* span should not be visible at first */
+        }
+
+        .box:hover {
+            width: 25em; /* box expanding on hover */
+        }
+
+        .box:hover .element1 {
+            display: block; /* span showing on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <span class="element1">Hi Im not here at first, but only on hover.</span>
+    I'm here for too long now.
+</div>
+
+</body>
+</html>

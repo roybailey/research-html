@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 Datetime Example</title>
+</head>
+<body>
+
+	<!-- STYLE  SECTION -->
+  <style type="text/css">
+  .date {
+  	width: 10em;
+  	height: 2em;
+  	border: 0.2em solid #2db0e6;
+  	border-radius: 0.5em;
+  	padding: 0.1em 0em 0.1em 1em;
+  	vertical-align: middle;
+  	background-color: #ebf5ff;
+  	color: #727272;
+  	font-size: 1.2em;
+  	font-family: "Lato";
+  }
+
+  input {
+  	display: block;
+  	margin-top: 2em;
+  }
+
+
+  </style>
+
+	<!-- HTML SECTION  -->
+
+	<h3>Date and Time Components - HTML5</h3>
+
+	<!-- Example of Date and Time -->
+	 <input type="datetime-local" value="none" />
+
+	 <!-- Example of Date Unrestricted -->
+	 <input class="date" type="date" value="none" >
+
+	 <!-- Example of Date Restricted -->
+	 <input type="date" min="2012-01-01" max="2013-01-01" >
+
+	 <!-- Example of Month Choice -->
+	 <input name="month" type="month">
+
+	 <!-- Example of Week Choice -->
+	 <input name="week" type="week">
+	 <!-- Example of Time Choice -->
+	 <input name="time" type="time" >
+
+	 <!-- Example of Time Choice - 15 min intervals -->
+	 <input type='time' min=9:00 max=17:00 step=900 >
+
+	</body>
+</html>
+
+
