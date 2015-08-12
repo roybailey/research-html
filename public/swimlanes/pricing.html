@@ -34,6 +34,8 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     -->
     <![endif]-->
+    <!-- Our DataSet -->
+    <script src="tickets.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -91,65 +93,64 @@
     //    </ul>
     //</div>
 
-    var dataset = [
-        {guid: "BOW-148", tshirt: "XS", remaining: 10,  cost: 60,  title: "Something very urgent but small" },
-        {guid: "BOW-148", tshirt: "M",  remaining: 230, cost: 480, title: "Something very big that should be broken down" },
-        {guid: "BOW-148", tshirt: "S",  remaining: 40,  cost: 120, title: "Something very interesting and important" }
-    ];
-    var divPricingBox = d3.select("div.pricing-table")
-            .selectAll("div")
-            .data(dataset)
-            .enter()
-            .append("div")
-            .attr("class", function(d) {
-                var classNames = "col-md-4 col-sm-4 col-xs-12 pricing-box second wow bounceInUp animated";
-                if(d.cost > 200) {
-                    classNames += " featured";
-                }
-                return classNames;
-            })
-            .append("ul");
-    divPricingBox.append("li").attr("class", "plain-title").text(function (d) {
-        return d.guid
-    });
-    var divStatus = divPricingBox
-            .append("li")
-            .attr("class", "subscription-price oswald");
-    divStatus.append("span").attr("class","currency oswald").text(function (d) {
-        return d.tshirt
-    });
-    divStatus.append("span").attr("class","price").text(function (d) {
-        return d.remaining
-    });
-    divStatus.append("span").text(function (d) {
-        return "/"+d.cost;
-    });
-    divPricingBox.append("li").attr("class", "ptop10").text(function (d) {
-        return d.title
-    });
-    divPricingBox.append("li").text(function (d) {
-        return d.title
-    });
-    divPricingBox.append("li").text(function (d) {
-        return d.title
-    });
-    divPricingBox.append("li").text(function (d) {
-        return d.title
-    });
-    divPricingBox.append("li").text(function (d) {
-        return d.title
-    });
-    divPricingBox.append("li").text(function (d) {
-        return d.title
-    });
-    divPricingBox.append("li").attr("class", "last border-none pbottom40").text(function (d) {
-        return d.title
-    });
-    divPricingBox
-            .append("li").attr("class", "sing-up")
-            .append("a").attr("href", "#").attr("class", "animate")
-            .text(function (d) {
-        return d.guid
+    tickets(function(tickets) {
+        console.log("LOADED TICKETS...");
+
+        var divPricingBox = d3.select("div.pricing-table")
+                .selectAll("div")
+                .data(tickets)
+                .enter()
+                .append("div")
+                .attr("class", function(d) {
+                    var classNames = "col-md-4 col-sm-4 col-xs-12 pricing-box second wow bounceInUp animated";
+                    if(d.cost > 200) {
+                        classNames += " featured";
+                    }
+                    return classNames;
+                })
+                .append("ul");
+        divPricingBox.append("li").attr("class", "plain-title").text(function (d) {
+            return d.guid
+        });
+        var divStatus = divPricingBox
+                .append("li")
+                .attr("class", "subscription-price oswald");
+        divStatus.append("span").attr("class","currency oswald").text(function (d) {
+            return d.tshirt
+        });
+        divStatus.append("span").attr("class","price").text(function (d) {
+            return d.remaining
+        });
+        divStatus.append("span").text(function (d) {
+            return "/"+d.cost;
+        });
+        divPricingBox.append("li").attr("class", "ptop10").text(function (d) {
+            return d.title
+        });
+        divPricingBox.append("li").text(function (d) {
+            return d.title
+        });
+        divPricingBox.append("li").text(function (d) {
+            return d.title
+        });
+        divPricingBox.append("li").text(function (d) {
+            return d.title
+        });
+        divPricingBox.append("li").text(function (d) {
+            return d.title
+        });
+        divPricingBox.append("li").text(function (d) {
+            return d.title
+        });
+        divPricingBox.append("li").attr("class", "last border-none pbottom40").text(function (d) {
+            return d.title
+        });
+        divPricingBox
+                .append("li").attr("class", "sing-up")
+                .append("a").attr("href", "#").attr("class", "animate")
+                .text(function (d) {
+                    return d.guid
+                });
     });
 
 </script>
