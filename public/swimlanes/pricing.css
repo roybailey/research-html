@@ -1,0 +1,153 @@
+/*============== Price style ==============*/
+.price_area {
+    background: #f8f8f8;
+}
+
+.price_section {
+
+}
+
+.price_section h1 {
+    color: #3498db;
+    margin-top: 55px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.pricing-table {
+    margin-top: 65px;
+}
+
+.pricing-box {
+    margin-bottom: 70px;
+    float: left;
+}
+
+.pricing-box ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+    border: solid 1px #ddd;
+    z-index: 1;
+}
+
+.pricing-box ul:hover .subscription-price {
+    background: #f32b1a;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.pricing-box ul li {
+    text-align: center;
+    border-bottom: solid 1px #ddd;
+    line-height: 40px;
+    background: #fff;
+}
+
+.pricing-box li.plan-title {
+    text-transform: uppercase;
+    line-height: 50px;
+    font-size: 16px;
+}
+
+.pricing-box li.subscription-price {
+    background: #666666;
+    color: #fff;
+    position: relative;
+    border-bottom: none;
+    font-size: 16px;
+}
+
+.pricing-box li.subscription-price .currency {
+    position: relative;
+    top: -50px;
+    left: 0;
+    margin-left: -10px;
+    font-size: 18px;
+}
+
+.pricing-box li.subscription-price .price {
+    font-size: 70px;
+    font-weight: 600;
+    font-family: 'Titillium Web', Helvetica, Arial, sans-serif;
+    line-height: 106px;
+}
+
+.pricing-box li.sing-up {
+    position: absolute;
+    left: 50%;
+    bottom: -22.5px;
+    margin-left: -79px;
+    background: #fff;
+    line-height: 45px !important;
+}
+
+.pricing-box li.sing-up a {
+    color: #000;
+    text-transform: uppercase;
+    padding: 11px 53px;
+    line-height: 42px;
+    border: solid 1px #ddd;
+}
+
+.pricing-box li.sing-up a:hover {
+    background: #666666;
+    border: solid 1px #666666;
+    color: #fff;
+}
+
+.pricing-box.featured {
+}
+
+.pricing-box.featured li.plan-title {
+    line-height: 61px;
+}
+
+.pricing-box.featured ul {
+    border: solid 2px #f32b1a;
+    z-index: 2;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, .11);
+}
+
+.last {
+    padding-bottom: 20px;
+}
+
+.pricing-box.featured ul li {
+    line-height: 45px;
+}
+
+.pricing-box.featured li.subscription-price {
+    background: #f32b1a;
+}
+
+.pricing-box.featured li.subscription-price .price {
+    line-height: 130px;
+    font-size: 85px;
+}
+/*
+.pricing-box.featured li.subscription-price .currency {
+    top: 25px;
+    margin-left: -80px;
+}
+*/
+.sing-up {
+    border-bottom: none;
+}
+
+.pricing-box.featured li.sing-up a {
+    background: #f32b1a;
+    color: #fff;
+    border: solid 1px #f32b1a;
+}
+
+.pricing-box.featured li.sing-up a:hover {
+    background: #CE2112;
+    border: solid 1px #CE2112;
+    color: #fff;
+}
