@@ -1,7 +1,7 @@
 guid,category,tshirt,cost,remaining,title
-JOB-100,icon,XS,60,10,Something very small but urgent
-JOB-101,app,M,480,240,Medium sized initiative
-JOB-102,card,S,120,120,Something very interesting and important
-JOB-103,app,L,960,880,Huge initiative
-JOB-104,icon,M,480,100,Integration exercise
+JOB-100,content,XS,60,10,Something very small but urgent
+JOB-101,platform,M,480,240,Medium sized initiative
+JOB-102,apps,S,120,120,Something very interesting and important
+JOB-103,platform,L,960,880,Huge initiative
+JOB-104,content,M,480,100,Integration exercise
 JOB-105,web,XXS,60,60,Nice to have

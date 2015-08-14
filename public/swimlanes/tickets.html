@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ticket Example</title>
+    <script src="../d3/d3/d3.v3.js" type="text/javascript"></script>
+    <!--Google web fonts
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,300italic,400italic,600,700,600italic,200,200italic'
+          rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
+    -->
+
+    <!-- Bootstrap -->
+    <link href="../fimply/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../fimply/css/animate.css">
+
+    <!-- font awesome
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    -->
+    <link rel="stylesheet" href="../fimply/css/skillset.css">
+
+    <link rel="stylesheet" type="text/css" href="../fimply/css/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="../fimply/css/owl.transitions.css">
+    <link rel="stylesheet" type="text/css" href="../fimply/css/owl.theme.css">
+
+    <link rel="stylesheet" type="text/css" href="tickets.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <!--
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    -->
+    <![endif]-->
+    <!-- Our DataSet -->
+    <script src="tickets.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="portfolio_area">
+    <div class="container">
+        <div class="portfolio_section">
+            <div class="col-md-12 portfolio_top">
+                <h1>Portfolio</h1>
+
+                <p>OUR TEAM INCLUDES GREAT THINKERS. YOU WOULD LOVE TO WORK WITH THEM AS THEY ARE JUST AMAZING PEOPLE.</p>
+            </div>
+        </div>
+
+        <ul id="filters" class="clearfix">
+            <li><span class="filter active" data-filter="app card icon logos web">All</span></li>
+            <li><span class="filter" data-filter="app">App</span></li>
+            <li><span class="filter" data-filter="card">Card</span></li>
+            <li><span class="filter" data-filter="icon">Icon</span></li>
+            <li><span class="filter" data-filter="logos">Logo</span></li>
+            <li><span class="filter" data-filter="web">Web</span></li>
+        </ul>
+
+        <div id="portfoliolist">
+            <div class="portfolio logos" data-cat="logos">
+                <div class="portfolio-wrapper">
+
+                    <div class="pricing-box second featured wow bounceInUp animated">
+                        <ul>
+                            <li class="plan-title">Ticket Title</li>
+                            <li class="subscription-price oswald">
+                                <span class="currency oswald">M</span>
+                                <span class="price">100</span>
+                                <span>/200</span>
+                            </li>
+                            <li class="details">Details</li>
+                            <li class="last border-none pbottom40">All Bonus Points</li>
+                            <li class="sing-up">
+                                <a href="#" class="animate">Update</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="label">
+                        <div class="label-text">
+                            <a class="text-title">Speciallisterne</a>
+                            <span class="text-category">Logo</span>
+                        </div>
+                        <div class="label-bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- portfolio area end   -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../jquery/jquery/1.10.2/jquery-1.10.2.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../fimply/js/bootstrap.min.js"></script>
+
+<script src="../fimply/js/wow.js"></script>
+
+<script src="../fimply/js/jquery.nicescroll.js"></script>
+
+<script type="text/javascript" src="../fimply/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="../fimply/js/jquery.mixitup.min.js"></script>
+<script src="../fimply/js/imagesloaded.pkgd.min.js"></script>
+
+<script src="../fimply/js/skillset.js"></script>
+
+<script src="../fimply/js/owl.carousel.js"></script>
+
+
+<script src="../fimply/js/scrollupto.js"></script>
+<!--script type="text/javascript" src="../fimply/js/main.js"></script-->
+
+<script>
+
+    //    <li><span class="filter active" data-filter="app card icon logos web">All</span></li>
+    //    <li><span class="filter" data-filter="app">App</span></li>
+    //    <li><span class="filter" data-filter="card">Card</span></li>
+    //    <li><span class="filter" data-filter="icon">Icon</span></li>
+    //    <li><span class="filter" data-filter="logos">Logo</span></li>
+    //    <li><span class="filter" data-filter="web">Web</span></li>
+
+    //    <div class="portfolio logos" data-cat="logos">
+    //        <div class="portfolio-wrapper">
+    //            <img src="../fimply/img/portfolios/logo/2.jpg" alt=""/>
+    //
+    //            <div class="label">
+    //                <div class="label-text">
+    //                    <a class="text-title">Speciallisterne</a>
+    //                    <span class="text-category">Logo</span>
+    //                </div>
+    //                <div class="label-bg"></div>
+    //            </div>
+    //        </div>
+    //    </div>
+
+    tickets(function (tickets) {
+        console.log("LOADED TICKETS..." + tickets.length);
+
+        var ticketSet = {};
+        var ticketList = ["All"];
+        tickets.forEach(function (ticket) {
+            if (!ticketSet[ticket.category]) {
+                ticketSet[ticket.category] = 1;
+                ticketList.push(ticket.category);
+            }
+        });
+
+        d3.select("ul#filters")
+                .selectAll("li")
+                .remove();
+        d3.select("ul#filters")
+                .selectAll("li")
+                .data(ticketList)
+                .enter()
+                .append("li")
+                .append("span")
+                .attr("class", "filter")
+                .attr("style", "text-transform:capitalize")
+                .attr("data-filter", function (d) {
+                    return d;
+                })
+                .text(function (d) {
+                    return d;
+                });
+
+        var divPortfolioWrapper = d3.select("div#portfoliolist")
+                .selectAll("div.portfolio")
+                .data(tickets)
+                .enter()
+                .append("div")
+                .attr("class", function (d) {
+                    return "mix_all portfolio " + d.category;
+                })
+                .attr("data-cat", function (d) {
+                    return d.category;
+                })
+                .append("div")
+                .attr("class", "portfolio-wrapper");
+        {
+            var divPricingBox = divPortfolioWrapper.append("div")
+                    .attr("class", function (d) {
+                        var classNames = "pricing-box second wow bounceInUp animated";
+                        if (d.cost > 200) {
+                            classNames += " featured";
+                        }
+                        return classNames;
+                    })
+                    .append("ul");
+            divPricingBox.append("li").attr("class", "plain-title").text(function (d) {
+                return d.guid
+            });
+            var divStatus = divPricingBox
+                    .append("li")
+                    .attr("class", "subscription-price oswald");
+            divStatus.append("span").attr("class", "currency oswald").text(function (d) {
+                return d.tshirt
+            });
+            divStatus.append("span").attr("class", "price").text(function (d) {
+                return d.remaining
+            });
+            divStatus.append("span").text(function (d) {
+                return "/" + d.cost;
+            });
+            divPricingBox.append("li").attr("class", "ptop10").text(function (d) {
+                return d.title
+            });
+            divPricingBox.append("li").text(function (d) {
+                return d.title
+            });
+            divPricingBox.append("li").text(function (d) {
+                return d.title
+            });
+            divPricingBox.append("li").text(function (d) {
+                return d.title
+            });
+            divPricingBox.append("li").text(function (d) {
+                return d.title
+            });
+            divPricingBox.append("li").text(function (d) {
+                return d.title
+            });
+            divPricingBox.append("li").attr("class", "last border-none pbottom40").text(function (d) {
+                return d.title
+            });
+            divPricingBox
+                    .append("li").attr("class", "sing-up")
+                    .append("a").attr("href", "#").attr("class", "animate")
+                    .text(function (d) {
+                        return d.guid
+                    });
+        }
+//        divPortfolioWrapper
+//                .append("img")
+//                .attr("src", "../fimply/img/portfolios/icon/3.jpg");
+        var divLabel = divPortfolioWrapper
+                .append("div")
+                .attr("class", "label");
+        var divLabelText = divLabel
+                .append("div")
+                .attr("class", "label-text");
+
+        divLabelText.append("a")
+                .attr("class", "text-title")
+                .text(function (d) {
+                    return d.title;
+                });
+        divLabelText.append("span")
+                .attr("class", "text-category")
+                .text(function (d) {
+                    return d.title;
+                });
+
+        divLabel.append("div")
+                .attr("class", "label-bg");
+
+        $(function () {
+
+            var filterList = {
+
+                init: function () {
+
+                    // MixItUp plugin
+                    // http://mixitup.io
+                    $('#portfoliolist').mixitup({
+                        targetSelector: '.portfolio',
+                        filterSelector: '.filter',
+                        effects: ['fade'],
+                        easing: 'snap',
+                        // call the hover effect
+                        onMixEnd: filterList.hoverEffect()
+                    });
+
+                },
+
+                hoverEffect: function () {
+
+                    // Simple parallax effect
+                    $('#portfoliolist .portfolio').hover(
+                            function () {
+                                $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+                                $(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');
+                                $(this).find('.pricing-box').stop().animate({top: -30}, 500, 'easeOutQuad');
+                                // $(this).find('.details').show();
+                            },
+                            function () {
+                                $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+                                $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
+                                $(this).find('pricing-box').stop().animate({top: 0}, 300, 'easeOutQuad');
+                                // $(this).find('.details').hide();
+                            }
+                    );
+
+                }
+
+            };
+
+            // Run the show!
+            filterList.init();
+
+        });
+    });
+
+</script>
+</body>
+</html>

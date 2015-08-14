@@ -1,0 +1,335 @@
+/* ===========Portfolio style===========*/
+
+.portfolio_area{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.portfolio_section{
+
+}
+
+.portfolio_section h1{
+    color: #3498db;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.portfolio_top{
+
+}
+
+.portfolio{
+
+}
+
+
+
+#info {
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    background:#fcf8e3;
+    border:1px solid  #fbeed5;
+    width:95%;
+    max-width:900px;
+    margin:0 auto 40px auto;
+    font-family:arial;
+    font-size:12px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+
+#info .info-wrapper {
+    padding:10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+
+}
+
+#info a {
+    color:#c09853;
+    text-decoration:none;
+}
+
+#info p {
+    margin:5px 0 0 0;
+}
+
+
+#filters {
+    margin:1%;
+    padding:0;
+    list-style:none;
+}
+
+#filters li {
+    float:left;
+}
+
+#filters li span {
+    display: block;
+    padding:5px 20px;
+    text-decoration:none;
+    color:#666;
+    cursor: pointer;
+}
+
+#filters li span.active {
+    background: #e95a44;
+    color:#fff;
+}
+
+
+
+#portfoliolist .portfolio {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    width:23%;
+    margin:1%;
+    display:none;
+    float:left;
+    overflow:hidden;
+}
+
+.portfolio-wrapper {
+    overflow:hidden;
+    position: relative !important;
+    background: #666;
+    cursor:pointer;
+}
+
+.portfolio img {
+    max-width:100%;
+    position: relative;
+}
+
+.portfolio .label {
+    position: absolute;
+    width: 100%;
+    height:40px;
+    bottom:-40px;
+}
+
+.portfolio .label-bg {
+    background: #e95a44;
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.portfolio .label-text {
+    color:#fff;
+    position: relative;
+    z-index:500;
+    padding:5px 8px;
+}
+
+.portfolio .text-category {
+    display:block;
+    font-size:9px;
+}
+
+
+
+
+
+
+/* #Tablet (Portrait) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .container {
+        width: 768px;
+    }
+}
+
+
+/*  #Mobile (Portrait) - Note: Design for a width of 320px */
+@media only screen and (max-width: 767px) {
+    .container {
+        width: 95%;
+    }
+
+    #portfoliolist .portfolio {
+        width:48%;
+        margin:1%;
+    }
+
+    #ads {
+        display:none;
+    }
+
+}
+
+
+/* #Mobile (Landscape) - Note: Design for a width of 480px */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .container {
+        width: 70%;
+    }
+
+    #ads {
+        display:none;
+    }
+
+}
+
+
+
+/*============== Price style ==============*/
+.price_area {
+    background: #f8f8f8;
+}
+
+.price_section {
+
+}
+
+.price_section h1 {
+    color: #3498db;
+    margin-top: 55px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.pricing-table {
+    margin-top: 65px;
+}
+
+.pricing-box {
+    margin-bottom: 70px;
+    off-float: left;
+}
+
+.pricing-box ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+    border: solid 1px #ddd;
+    z-index: 1;
+}
+
+.pricing-box ul:hover .subscription-price {
+    background: #f32b1a;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.pricing-box ul li {
+    text-align: center;
+    border-bottom: solid 1px #ddd;
+    line-height: 40px;
+    background: #fff;
+}
+
+.pricing-box li.plan-title {
+    text-transform: uppercase;
+    line-height: 50px;
+    font-size: 16px;
+}
+
+.pricing-box li.subscription-price {
+    background: #666666;
+    color: #fff;
+    position: relative;
+    border-bottom: none;
+    font-size: 16px;
+}
+
+.pricing-box li.subscription-price .currency {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    margin-left: -70px;
+    font-size: 18px;
+}
+
+.pricing-box li.subscription-price .price {
+    font-size: 70px;
+    font-weight: 600;
+    font-family: 'Titillium Web', Helvetica, Arial, sans-serif;
+    line-height: 106px;
+}
+
+.pricing-box li.sing-up {
+    position: absolute;
+    left: 50%;
+    bottom: -22.5px;
+    margin-left: -79px;
+    background: #fff;
+    line-height: 45px !important;
+}
+
+.pricing-box li.sing-up a {
+    color: #000;
+    text-transform: uppercase;
+    padding: 11px 53px;
+    line-height: 42px;
+    border: solid 1px #ddd;
+}
+
+.pricing-box li.sing-up a:hover {
+    background: #666666;
+    border: solid 1px #666666;
+    color: #fff;
+}
+
+.pricing-box.featured {
+}
+
+.pricing-box.featured li.plan-title {
+    line-height: 61px;
+}
+
+.pricing-box.featured ul {
+    border: solid 2px #f32b1a;
+    z-index: 2;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, .11);
+}
+
+.last {
+    padding-bottom: 20px;
+}
+
+.pricing-box.featured ul li {
+    line-height: 45px;
+}
+
+.pricing-box.featured li.subscription-price {
+    background: #f32b1a;
+}
+
+.pricing-box.featured li.subscription-price .price {
+    line-height: 130px;
+    font-size: 85px;
+}
+
+.pricing-box.featured li.subscription-price .currency {
+    top: 25px;
+    margin-left: -80px;
+}
+
+.sing-up {
+    border-bottom: none;
+}
+
+.pricing-box.featured li.sing-up a {
+    background: #f32b1a;
+    color: #fff;
+    border: solid 1px #f32b1a;
+}
+
+.pricing-box.featured li.sing-up a:hover {
+    background: #CE2112;
+    border: solid 1px #CE2112;
+    color: #fff;
+}
