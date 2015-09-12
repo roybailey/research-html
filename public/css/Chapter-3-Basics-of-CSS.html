@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head><title>Chapter 3 - Basics of CSS</title>
+    <style>
+
+        a[href="http://www.learncodingfast.com"], p:nth-child(2), p::first-letter {
+            background-color: yellow;
+        }
+
+        p::after {
+            content: '!';
+        }
+    </style>
+</head>
+
+<body>
+<h1>Chapter 3 - Basics of CSS</h1>
+
+<h2>CSS Selectors</h2>
+
+<p>This exercise uses background color to help us figure out which element we are selecting. This paragraph has no class or id.</p>
+
+<p id="myIDPara">This paragraph has id = "myIDPara".</p>
+
+<p class="myClassPara">This paragraph has class = "myClassPara".</p>
+
+<p class="myClassPara mySecondClassPara">This paragraph has class = "myClassPara" and class = "mySecondClassPara".</p>
+
+<div>
+    This is some text in the div element.
+
+    <p>This paragraph is the first child element of the 'div' element.</p>
+
+    <p>This paragraph is the second child element of the 'div' element.</p>
+
+    <p>This paragraph is the third child element of the 'div' element.</p>
+</div>
+
+<a href="http://www.learncodingfast.com">Learn Coding Fast</a><br>
+<a href="http://www.google.com">Google</a>
+
+</body>
+
+</html>

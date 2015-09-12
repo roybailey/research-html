@@ -36,6 +36,27 @@
     <![endif]-->
     <!-- Our DataSet -->
     <script src="tickets.js" type="text/javascript"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../jquery/jquery/1.10.2/jquery-1.10.2.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../fimply/js/bootstrap.min.js"></script>
+
+    <script src="../fimply/js/wow.js"></script>
+
+    <script src="../fimply/js/jquery.nicescroll.js"></script>
+
+    <script type="text/javascript" src="../fimply/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="../fimply/js/jquery.mixitup.min.js"></script>
+    <script src="../fimply/js/imagesloaded.pkgd.min.js"></script>
+
+    <script src="../fimply/js/skillset.js"></script>
+
+    <script src="../fimply/js/owl.carousel.js"></script>
+
+
+    <script src="../fimply/js/scrollupto.js"></script>
+    <!--script type="text/javascript" src="../fimply/js/main.js"></script-->
+
 </head>
 <body>
 
@@ -93,12 +114,12 @@
     //        </div>
     //    </div>
 
-    tickets(function (tickets) {
-        console.log("LOADED TICKETS..."+tickets.length);
+    d3.csv("portfolio.csv", function(portfolio){
+        console.log("LOADED PORTFOLIO..."+portfolio.length);
 
         var divPortfolioWrapper = d3.select("div#portfoliolist")
                 .selectAll("div.portfolio")
-                .data(tickets)
+                .data(portfolio)
                 .enter()
                 .append("div")
                 .attr("class", function (d) {
@@ -177,26 +198,5 @@
     });
 
 </script>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../jquery/jquery/1.10.2/jquery-1.10.2.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../fimply/js/bootstrap.min.js"></script>
-
-<script src="../fimply/js/wow.js"></script>
-
-<script src="../fimply/js/jquery.nicescroll.js"></script>
-
-<script type="text/javascript" src="../fimply/js/jquery.easing.min.js"></script>
-<script type="text/javascript" src="../fimply/js/jquery.mixitup.min.js"></script>
-<script src="../fimply/js/imagesloaded.pkgd.min.js"></script>
-
-<script src="../fimply/js/skillset.js"></script>
-
-<script src="../fimply/js/owl.carousel.js"></script>
-
-
-<script src="../fimply/js/scrollupto.js"></script>
-<!--script type="text/javascript" src="../fimply/js/main.js"></script-->
-
 </body>
 </html>

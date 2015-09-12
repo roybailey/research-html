@@ -140,7 +140,7 @@
         console.log("LOADED TICKETS..." + tickets.length);
 
         var ticketSet = {};
-        var ticketList = ["All"];
+        var ticketList = ["all"];
         tickets.forEach(function (ticket) {
             if (!ticketSet[ticket.category]) {
                 ticketSet[ticket.category] = 1;
@@ -172,7 +172,7 @@
                 .enter()
                 .append("div")
                 .attr("class", function (d) {
-                    return "mix_all portfolio " + d.category;
+                    return "mix portfolio " + d.category;
                 })
                 .attr("data-cat", function (d) {
                     return d.category;
@@ -205,18 +205,6 @@
                 return "/" + d.cost;
             });
             divPricingBox.append("li").attr("class", "ptop10").text(function (d) {
-                return d.title
-            });
-            divPricingBox.append("li").text(function (d) {
-                return d.title
-            });
-            divPricingBox.append("li").text(function (d) {
-                return d.title
-            });
-            divPricingBox.append("li").text(function (d) {
-                return d.title
-            });
-            divPricingBox.append("li").text(function (d) {
                 return d.title
             });
             divPricingBox.append("li").text(function (d) {

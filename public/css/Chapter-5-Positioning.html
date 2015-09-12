@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head><title>Chapter 5 - Positioning</title>
+
+<style type="text/css">
+
+#box1 {
+	background-color: green;
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+	border: 5px solid black;
+	margin: 20px;
+}
+
+#box2 {
+	background-color: red;
+	width: 50px;
+	height: 50px;
+	padding: 20px;
+	border: 5px dotted black;
+	margin: 10px;
+	position: relative;
+	top: 50px;
+	left: 70px;
+}
+
+#box3 {
+	position: absolute;
+	top: 50px;
+	left: 150px;
+	background-color: yellow;
+	width: 50px;
+	height: 50px;
+	padding: 20px;
+	border: 5px dotted black;
+	margin: 10px;
+}
+
+p {
+	position: relative;
+	z-index: 2;
+}
+
+</style></head>
+
+<body>
+
+		<div id="box1"></div>
+		<div id="box2">
+			<div id="box3"></div>
+		</div>
+
+	<p>This is some text added to demonstrate the concept of overlapping.</p>
+</body>
+</html>

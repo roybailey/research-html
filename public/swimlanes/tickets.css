@@ -247,9 +247,9 @@
 
 .pricing-box li.subscription-price .currency {
     position: absolute;
-    top: 15px;
+    top: 5px;
     left: 50%;
-    margin-left: -70px;
+    margin-left: -100px;
     font-size: 18px;
 }
 
@@ -314,8 +314,8 @@
 }
 
 .pricing-box.featured li.subscription-price .currency {
-    top: 25px;
-    margin-left: -80px;
+    top: 5px;
+    margin-left: -100px;
 }
 
 .sing-up {
