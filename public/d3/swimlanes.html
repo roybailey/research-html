@@ -100,7 +100,8 @@
 
         console.log(teamTasks);
 
-        // <div class="div.swimlane swimlane[names...]" />
+        // Create the swimlanes
+        // <div class="div.swimlane swimlane-[names...]" />
         d3.select("#ticket-container")
                 .selectAll("div.swimlane")
                 .data(['team', 'todo', 'work', 'done'])
@@ -110,7 +111,7 @@
                     return "swimlane swimlane-" + d;
                 });
 
-        // <div class="div.team-box" in each swimlane />
+        // Fill in the teams names swimlane
         d3.select("#ticket-container .swimlane-team")
                 .selectAll("div.team-box")
                 .data(teamTasks)
@@ -121,6 +122,21 @@
                     return d.key;
                 });
 
+        // <div class="div.todo-box" />
+        var appendTaskDetail = function (ul) {
+            ul.append("li").text(function (d) {
+                return d.guid;
+            });
+            ul.append("li").text(function (d) {
+                return d.team;
+            });
+            ul.append("li").text(function (d) {
+                return d.status;
+            });
+        };
+
+        // Create identifiable team boxes in each other swimlane
+        // <div class="team-box" id="[team]-[lane]-box"></div>
         ['todo', 'work', 'done'].forEach(function (d) {
             var lane = d;
             d3.select(".swimlane-" + lane)
@@ -134,27 +150,20 @@
                     });
         });
 
-        // <div class="div.todo-box" />
-        var appendTaskDetail = function (ul) {
-            ul.append("li").text(function (d) {
-                return d.guid;
+        teamTasks.forEach(function (team) {
+            ['todo', 'work', 'done'].forEach(function (lane) {
+                appendTaskDetail(
+                        d3.select("#" + team.key + "-" + lane + "-box")
+                                .selectAll("div." + lane + "-box")
+                                .data(team.values.filter(function (d) {
+                                    return d.status === lane;
+                                }))
+                                .enter()
+                                .append("div")
+                                .attr("class", lane + "-box")
+                                .append("ul")
+                );
             });
-            ul.append("li").text(function (d) {
-                return d.team;
-            });
-        };
-        teamTasks.filter(function (d, i) {
-            return true;
-        }).forEach(function (team) {
-            appendTaskDetail(
-                    d3.select("#" + team.key + "-todo-box")
-                            .selectAll("div.todo-box")
-                            .data(team.values)
-                            .enter()
-                            .append("div")
-                            .attr("class", "todo-box")
-                            .append("ul")
-            );
         });
     });
 

@@ -1,8 +1,8 @@
-guid,rag,team,tshirt,cost,remaining,title
+guid,status,team,tshirt,cost,remaining,title
 JOB-101,done,content,XS,60,0,Something very small but urgent
-JOB-102,green,platform,M,480,240,Medium sized initiative
+JOB-102,work,platform,M,480,240,Medium sized initiative
 JOB-103,todo,apps,S,120,120,Something very interesting and important
-JOB-104,amber,platform,L,960,880,Huge initiative
-JOB-105,green,content,M,480,100,Integration exercise
+JOB-104,work,platform,L,960,880,Huge initiative
+JOB-105,work,content,M,480,100,Integration exercise
 JOB-106,todo,web,XXS,60,60,Nice to have
 JOB-107,todo,content,XS,60,10,Another nice to have
