@@ -68,6 +68,33 @@
         .clearFloat {
             clear: both;
         }
+
+        .task-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .task-box ul li {
+            padding: 0;
+            margin: 0;
+        }
+
+        .task-box ul li.guid {
+            float: left;
+            width: 100%;
+            background-color: lightgreen;
+        }
+        .task-box ul li.team {
+            float: left;
+            width: 100%;
+            background-color: darkseagreen;
+        }
+        .task-box ul li.status {
+            float: left;
+            width: 100%;
+            background-color: forestgreen;
+        }
     </style>
 </head>
 
@@ -124,15 +151,21 @@
 
         // <div class="div.todo-box" />
         var appendTaskDetail = function (ul) {
-            ul.append("li").text(function (d) {
-                return d.guid;
-            });
-            ul.append("li").text(function (d) {
-                return d.team;
-            });
-            ul.append("li").text(function (d) {
-                return d.status;
-            });
+            ul.append("li")
+                    .attr("class", "guid")
+                    .text(function (d) {
+                        return d.guid;
+                    });
+            ul.append("li")
+                    .attr("class", "team")
+                    .text(function (d) {
+                        return d.team;
+                    });
+            ul.append("li")
+                    .attr("class", "status")
+                    .text(function (d) {
+                        return d.status;
+                    });
         };
 
         // Create identifiable team boxes in each other swimlane
@@ -160,7 +193,7 @@
                                 }))
                                 .enter()
                                 .append("div")
-                                .attr("class", lane + "-box")
+                                .attr("class", "task-box " + lane + "-box")
                                 .append("ul")
                 );
             });
