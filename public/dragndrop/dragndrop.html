@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #divTodo, #divDone {
+            float: left;
+            width: 280px;
+            height: 180px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+
+        .status-todo {
+            background-color: dodgerblue;
+        }
+
+        .status-done {
+            background-color: forestgreen;
+        }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    function dragInitialize(ev) {
+        ev.dataTransfer.effectAllowed = 'move';
+        ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
+        return true;
+    }
+
+    function allowDropStatus(ev) {
+        ev.preventDefault();
+        return false;
+    }
+
+    function dropComplete(ev,status) {
+        ev.preventDefault();
+        var src = ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(src));
+        document.getElementById(src+"-status").textContent = status;
+        document.getElementById(src+"-status").setAttribute("class","status-"+status.toLowerCase());
+        ev.stopPropagation();
+        return false;
+    }
+</script>
+
+
+<!-- In body add the following draggable attributes to first div -->
+
+<div id="divTodo"
+     ondrop="return dropComplete(event,'TODO')"
+     ondragover="return allowDropStatus(event)">
+    <ul style="width: 250px; height: 150px; background-color: lightgray" id="drag1"
+        draggable="true" ondragstart="return dragInitialize(event)">
+        <li class="title">TITLE</li>
+        <li class="description">Description</li>
+        <li class="status-todo" id="drag1-status">TODO</li>
+    </ul>
+</div>
+<!-- Modify the 2nd div to accept the drop -->
+
+<div id="divDone"
+     ondrop="return dropComplete(event,'DONE')"
+     ondragover="return allowDropStatus(event)"></div>
+
+
+</body>
+</html>
