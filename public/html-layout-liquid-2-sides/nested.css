@@ -49,62 +49,113 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 	display: block;
 }
 body {
-	font: 12px/18px Arial, sans-serif;
+	font: 100% Arial, sans-serif;
+	line-height: 1em;
+	height: 100%;
 }
+strong {
+	font-weight: bold;
+}
+
+
 .wrapper {
 	width: 100%;
-	min-width: 1000px;
+	height: 100%;
 }
-
-
+.box-wrapper {
+	width: 10em;
+	min-width: 10em;
+	max-width: 10em;
+	height: 10em;
+	overflow: hidden;
+	display: inline-block;
+}
 /* Header
 -----------------------------------------------------------------------------*/
 .header {
 	height: 6em;
 	background: #FFE680;
+	overflow: hidden;
 }
 
+.box-header {
+	height: 1em;
+	background: lightgrey;
+	overflow: hidden;
+}
 
 /* Middle
 -----------------------------------------------------------------------------*/
 .middle {
 	width: 100%;
+	height: 100%;
 	position: relative;
 }
-.middle:after {
+.box-middle {
+	width: 100%;
+	position: relative;
+}
+.middle:after, .box-middle:after {
 	display: table;
 	clear: both;
 	content: '';
 }
-.container {
+.container, .box-container {
 	width: 100%;
 	float: left;
 	overflow: hidden;
 }
 .content {
-	padding: 0 21em 0 21em;
+	padding: 0 20em 0 20em;
 }
-
+.box-content {
+	padding: 0 2em 0 2em;
+	height: 8em;
+	min-height: 8em;
+	overflow: hidden;
+}
 
 /* Left Sidebar
 -----------------------------------------------------------------------------*/
 .left-sidebar {
 	float: left;
 	width: 20em;
+	height: 100%;
 	margin-left: -100%;
 	position: relative;
 	background: #B5E3FF;
+	overflow: hidden;
 }
 
+.box-left-sidebar {
+	float: left;
+	width: 2em;
+	height: 8em;
+	margin-left: -100%;
+	position: relative;
+	background: #FFACAA;
+	overflow: hidden;
+}
 
 /* Right Sidebar
 -----------------------------------------------------------------------------*/
 .right-sidebar {
 	float: left;
 	width: 20em;
+	height: 100%;
 	margin-left: -20em;
 	position: relative;
 	background: #FFACAA;
+	overflow: hidden;
+}
+.box-right-sidebar {
+	float: left;
+	width: 2em;
+	height: 8em;
+	margin-left: -2em;
+	position: relative;
+	background: #B5E3FF;
+	overflow: hidden;
 }
 
 
@@ -114,7 +165,8 @@ body {
 	height: 4em;
 	background: #BFF08E;
 }
-
-strong {
-	font-weight: bold;
+.box-footer {
+	height: 1em;
+	background: lightgrey;
 }
+
