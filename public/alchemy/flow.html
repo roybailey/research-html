@@ -1,0 +1,41 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../_assets/alchemy/alchemy.min.css"/>
+</head>
+<body>
+<div class="alchemy" id="alchemy"></div>
+<script src="../_assets/alchemy/alchemy.min.js"></script>
+<script type="text/javascript">
+    var config = {
+        dataSource: 'flow.json',
+        forceLocked: false,
+        graphHeight: function () {
+            return 800;
+        },
+        graphWidth: function () {
+            return 400;
+        },
+        linkDistance: function () {
+            return 40;
+        },
+        captionsToggle: true,
+        directedEdges: true,
+        nodeTypes: {"node_type": [
+            "Flex Client",
+            "HTML Client",
+            "Node Server",
+            "Java Server",
+            "External System",
+            "Vendor Product"
+        ]},
+        nodeCaption: function (node) {
+            return node.artifact;
+        },
+        edgeCaption: function (edge) {
+            return edge.transport;
+        }
+    };
+    alchemy = new Alchemy(config)
+</script>
+</body>
+</html>
