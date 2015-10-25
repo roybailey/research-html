@@ -1,0 +1,54 @@
+<!-- START SIGMA IMPORTS -->
+<script src="../_assets/sigma/sigma.min.js"></script>
+<!-- END SIGMA IMPORTS -->
+<script src="../_assets/sigma/plugins/sigma.parsers.json.min.js"></script>
+<script src="../_assets/sigma/plugins/sigma.parsers.cypher.min.js"></script>
+
+<div id="container">
+    <style>
+        #graph-container {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+        }
+    </style>
+    <div id="graph-container"></div>
+</div>
+
+<script type="application/javascript">
+    /**
+     * Here is just a basic example on how to properly display a neo4j cypher query.
+     *
+     * The plugin sigma.neo4j.cypher can load a cypher query, parse the JSON response,
+     * and instantiate sigma when the response is received.
+     *
+     * It based on the json parser (that's why its must be loaded).
+     */
+    sigma.neo4j.cypher(
+            { url: 'http://localhost:7474', user: 'neo4j', password: 'neo4j' },
+            'MATCH (n) OPTIONAL MATCH (n)-[r]->(m) RETURN n,r,m LIMIT 100',
+            { container: 'graph-container' } ,
+            function(s) {
+                console.log('Number of nodes :'+ s.graph.nodes().length);
+                console.log('Number of edges :'+ s.graph.edges().length);
+            }
+    );
+
+    // Calling neo4j to get all its relationship type
+    sigma.neo4j.getTypes(
+            { url: 'http://localhost:7474', user:'neo4j', password:'neo4j' },
+            function(types) {
+                console.log("Relationship types" + types);
+            }
+    );
+
+    // Calling neo4j to get all its node label
+    sigma.neo4j.getLabels(
+            { url: 'http://localhost:7474', user:'neo4j', password:'neo4j' },
+            function(labels) {
+                console.log("Node labels" + labels);
+            }
+    );
+</script>

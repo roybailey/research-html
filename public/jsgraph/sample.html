@@ -1,0 +1,73 @@
+<html>
+<head>
+    <script type="text/javascript" src="../_assets/js-graph-it_1.1/js-graph-it.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_assets/js-graph-it_1.1/js-graph-it.css">
+    <style>
+        .canvas {
+            font-family: tahoma;
+        }
+
+        .block {
+            position: relative;
+            border: 1px solid #7DAB76;
+            background-color: #BAFFB0;
+            padding: 3px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .connector {
+            background-color: #FF9900;
+        }
+
+        .source-label, .middle-label, .destination-label {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body onload="initPageObjects();">
+<div class="canvas" id="mainCanvas" style="display: block; width: auto; height: 800px; text-align: center">
+
+    <h1 class="block draggable" id="h1_block" style="text-align: center; top: 10px;">
+        client-side-artifact
+    </h1>
+
+    <h2 class="block draggable" id="h2_block" style="text-align: center; top: 110px;">
+        server-side-restful-service
+    </h2>
+
+    <h2 class="block draggable" id="h3_block" style="text-align: center; top: 210px;">
+        server-side-artifact
+    </h2>
+
+    <h1 class="block draggable" id="h4_block" style="text-align: center; top: 310px;">
+        server-side-vendor-database
+    </h1>
+
+    <div class="connector h1_block h2_block down_start down_end">
+        <img src="arrow.gif" class="connector-start">
+        <img src="arrow.gif" class="connector-end">
+        <label class="source-label">start</label>
+        <label class="middle-label">middle</label>
+        <label class="destination-label">end</label>
+    </div>
+
+    <div class="connector h2_block h3_block down_start down_end">
+        <img src="arrow.gif" class="connector-start">
+        <img src="arrow.gif" class="connector-end">
+        <label class="source-label">start</label>
+        <label class="middle-label">middle</label>
+        <label class="destination-label">end</label>
+    </div>
+
+    <div class="connector h3_block h4_block down_start down_end">
+        <img src="arrow.gif" class="connector-start">
+        <img src="arrow.gif" class="connector-end">
+        <label class="source-label">start</label>
+        <label class="middle-label">middle</label>
+        <label class="destination-label">end</label>
+    </div>
+
+</div>
+</body>
+</html>
