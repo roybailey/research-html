@@ -64,10 +64,26 @@
         .swimlane-row {
             border: 1px solid darkorange;
         }
+        .swimlane-left-sidebar {
+            float: left;
+            width: 2em;
+            height: 50em;
+            display: inline-block;
+        }
+        .swimlane-right-sidebar {
+            float: right;
+            width: 2em;
+            height: 50em;
+            display: inline-block;
+        }
+        .swimlane-content {
+            width: auto;
+        }
     </style>
 </head>
 <body>
 
+<h1>Basic 3 column Grid</h1>
 <div class="uk-panel uk-panel-box uk-text-center">
     <div class="uk-grid">
         <div class="uk-width-1-1">Header</div>
@@ -78,6 +94,7 @@
     </div>
 </div>
 
+<h1>Basic 10 column Grid (1-8-1) for center content</h1>
 <div class="uk-panel uk-panel-box uk-text-center">
     <div class="uk-grid">
         <div class="uk-width-1-1">Header</div>
@@ -88,6 +105,7 @@
     </div>
 </div>
 
+<h1>Complex 10 column Grid (1-8-1) for center content</h1>
 <div class="uk-panel uk-panel-box uk-text-center">
     <div class="uk-grid uk-grid-collapse">
         <div class="uk-width-1-1">Main Header</div>
@@ -283,6 +301,207 @@
         <div class="uk-width-1-1">Main Footer</div>
     </div>
 </div>
+
+
+<h1>Complex vertical Grid custom center content</h1>
+<div class="uk-panel uk-panel-box uk-text-center">
+    <div class="uk-grid uk-grid-collapse">
+        <div class="uk-width-1-1">Main Header</div>
+        <div class="uk-width-1-1">
+            <div class="swimlane-left-sidebar sidebar">Left SideBar</div>
+            <div class="swimlane-right-sidebar sidebar">Right SideBar</div>
+            <div class="swimlane-content content">
+
+                <div class="uk-grid uk-grid-collapse red-border">
+                    <div class="uk-width-1-3 swimlane-header">
+                        <h3>TODO</h3>
+                    </div>
+                    <div class="uk-width-1-3 swimlane-header">
+                        <h3>In-Progress</h3>
+                    </div>
+                    <div class="uk-width-1-3 swimlane-header">
+                        <h3>DONE</h3>
+                    </div>
+                </div>
+
+                <div class="uk-grid uk-grid-collapse red-border">
+                    <div class="uk-width-1-1">Group Header</div>
+                    <div class="uk-width-1-3 swimlane-row">
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                    </div>
+                    <div class="uk-width-1-3 swimlane-row">
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                    </div>
+                    <div class="uk-width-1-3 swimlane-row">
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                    </div>
+                    <div class="uk-width-1-1">Group Footer</div>
+                </div>
+
+                <div class="uk-grid uk-grid-collapse red-border">
+                    <div class="uk-width-1-1">Group Header</div>
+                    <div class="uk-width-1-3 swimlane-row">
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                    </div>
+                    <div class="uk-width-1-3 swimlane-row">
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                    </div>
+                    <div class="uk-width-1-3 swimlane-row">
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                        <div class="uk-grid uk-grid-collapse taskbox blue-border">
+                            <div class="uk-width-1-1 task-header">task-header</div>
+                            <div class="uk-width-1-3 task-leftbar">TL</div>
+                            <div class="uk-width-1-3 content task-content">TASK</div>
+                            <div class="uk-width-1-3 task-rightbar">TR</div>
+                            <div class="uk-width-1-1 task-footer">task-footer</div>
+                        </div>
+
+                    </div>
+                    <div class="uk-width-1-1">Group Footer</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="uk-width-1-1">Main Footer</div>
+    </div>
+</div>
+
 
 </body>
 </html>
