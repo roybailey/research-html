@@ -18,10 +18,11 @@
     </p>
 </div>
 
-<script src="assets/react/react.js"></script>
-<script src="assets/react/JSXTransformer.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore.js"></script>
-<script src="assets/d3/d3.v3.js"></script>
+<script src="../_assets/d3/3.5.7/d3.min.js"></script>
+<script src="../_assets/underscore/1.8.3/underscore-min.js"></script>
+<script src="../_assets/react/0.14.2/react.js"></script>
+<script src="../_assets/react/0.14.2/react-dom.js"></script>
+<script src="assets/JSXTransformer.js"></script>
 
 <script type="text/jsx">
     // ------------------------------------------------------------
@@ -94,7 +95,7 @@
         }
     });
 
-    React.render(<BarChart width={600} height={300} />,
+    ReactDOM.render(<BarChart width={600} height={300} />,
             document.getElementById('container'));
 </script>
 

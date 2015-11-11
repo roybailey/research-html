@@ -13,8 +13,9 @@
     </p>
 </div>
 
-<script src="assets/react/react.js"></script>
-<script src="assets/react/JSXTransformer.js"></script>
+<script src="../_assets/react/0.14.2/react.js"></script>
+<script src="../_assets/react/0.14.2/react-dom.js"></script>
+<script src="assets/JSXTransformer.js"></script>
 <script type="text/jsx">
     // ------------------------------------------------------------
     // Create a basic class to render hard-coded HTML
@@ -27,7 +28,7 @@
     // ------------------------------------------------------------
     // Render instance of component and apply/replace in document using id
     // ------------------------------------------------------------
-    React.render(
+    ReactDOM.render(
             <HelloWorld />,
             document.getElementById('container')
     );

@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <title>React + d3</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore.js"></script>
-    <script src="assets/react/react.js"></script>
-    <script src="assets/react/JSXTransformer.js"></script>
-    <script src="assets/d3/d3.v3.js"></script>
+    <script src="../_assets/d3/3.5.7/d3.min.js"></script>
+    <script src="../_assets/underscore/1.8.3/underscore-min.js"></script>
+    <script src="../_assets/react/0.14.2/react.js"></script>
+    <script src="../_assets/react/0.14.2/react-dom.js"></script>
+    <script src="assets/JSXTransformer.js"></script>
 </head>
 <body>
 <div id="container"> </div>
@@ -108,7 +109,7 @@
         series3: [ { x: 0, y: 0 }, { x: 1, y: 5 }, { x: 2, y: 8 }, { x: 3, y: 2 }, { x: 4, y: 6 }, { x: 5, y: 4 }, { x: 6, y: 2 } ]
     };
 
-    React.renderComponent(
+    ReactDOM.render(
             <LineChart data={data} />,
             document.getElementById('container')
     );
