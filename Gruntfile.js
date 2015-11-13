@@ -29,6 +29,10 @@ module.exports = function (grunt) {
                     src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/<%= vD3 %>/d3.min.js',
                     dest: 'public/_assets/d3/<%= vD3 %>/d3.min.js'
                 },
+                'd3plus': {
+                    src: "http://d3plus.org/d3plus.zip",
+                    dest: 'public/_assets/d3plus.zip'
+                },
                 'underscore': {
                     src: 'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/<%= vUnderscore %>/underscore-min.js',
                     dest: 'public/_assets/underscore/<%= vUnderscore %>/underscore-min.js'
@@ -104,13 +108,17 @@ module.exports = function (grunt) {
             },
 
             unzip: {
-                'jquery-ui': {
-                    src: 'public/_assets/jquery-ui-<%= vJQueryUI %>.zip',
-                    dest: 'public/_assets/jquery-ui/'
+                'd3plus': {
+                    src: 'public/_assets/d3plus.zip',
+                    dest: 'public/_assets/d3plus/'
                 },
                 'uikit': {
                     src: 'public/_assets/uikit-<%= vUIKit %>.zip',
                     dest: 'public/_assets/uikit/uikit-<%= vUIKit %>/'
+                },
+                'jquery-ui': {
+                    src: 'public/_assets/jquery-ui-<%= vJQueryUI %>.zip',
+                    dest: 'public/_assets/jquery-ui/'
                 },
                 'sigma': {
                     src: 'public/_assets/sigma-<%= vSigma %>.zip',
@@ -126,6 +134,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('download', [
         'if-missing:curl:d3',
+        'if-missing:curl:d3plus',
+        'if-missing:unzip:d3plus',
         'if-missing:curl:underscore',
         'if-missing:curl:clipboard',
         'if-missing:curl:lodash',
