@@ -4,13 +4,6 @@
   "description": "Research HTML5",
   "main": "app.js",
   "dependencies": {
-    "body-parser": "^1.0.2",
-    "clipboard": "1.2.0",
-    "cookie-parser": "^1.0.1",
-    "debug": "^0.7.4",
-    "express": "^4.12.3",
-    "path": "^0.11.14",
-    "static-favicon": "^2.0.0-alpha"
   },
   "scripts": {
     "start": "forever --watchDirectory public -w app.js"

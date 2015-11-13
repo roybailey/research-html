@@ -1,15 +1,18 @@
 # research-html
 
 HTML based snippets.
-Most work straight from file-system but some will require a web-server and http access.
-Some reference frameworks under `public/_assets` and will need changing to local or cdn locations.
 
-what       | description
------------|------------
-`react/*`  | samples from various react tutorials
-`svg/*`    | svg snippets
-`jquery/*` | jquery snippets
-`charts/*` | some charting snippets
+Most work straight from file-system but some will require a web-server and http access.
+Frameworks are downloaded and kept under `public/_assets` so I can work offline.
+
+## Getting Started
+
+what                     | description
+-------------------------|------------
+`npm install`            | to install Grunt 
+`grunt download`         | to download all the assets referenced in the code (so they work offline)
+`http-server public`     | to run local http server for running the site
+`http://localhost:8080`  | straight directory list for you to explore
 
 #### Sample pages
 
@@ -21,18 +24,18 @@ what       | description
 #### Frameworks
 
 As I often need to work on these offline I've unpacked local copies of many frameworks
-for development work under `public/_assets`.  You can update them to cdn references or
-download from the links below locally:
+for development work under `public/_assets`.
+
+Some of the frameworks I've played with are listed here:
 
 * [jquery](https://jquery.com/)
-* [jquery-ui-1.11.4](https://jqueryui.com/)
+* [jquery-ui](https://jqueryui.com/)
 * [knockout](http://knockoutjs.com/)
 * [sammy](http://sammyjs.org)
 * [clipboard](https://zenorocha.github.io/clipboard.js/)
-* [uikit-2.22.0](http://getuikit.com/)
+* [uikit](http://getuikit.com/)
 * [alchemy](http://graphalchemist.github.io/Alchemy/)
 * [cytoscape](http://js.cytoscape.org/)
-* [js-graph-it_1.1](http://js-graph-it.sourceforge.net/)
 * [sigma](http://sigmajs.org/)
 
-Please see license.  No guarantees anything still works.
+Please see license.
