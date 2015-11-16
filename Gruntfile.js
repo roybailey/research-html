@@ -17,6 +17,7 @@ module.exports = function (grunt) {
             vReactRedux: "4.0.0",
             vKnockout: "3.3.0",
             vSammy: "0.7.6",
+            vRiot: "2.3.1",
             vClipboard: "1.5.3",
             vUIKit: "2.23.0",
             vSigma: "1.0.3",
@@ -76,6 +77,14 @@ module.exports = function (grunt) {
                 'sammy': {
                     src: 'https://cdnjs.cloudflare.com/ajax/libs/sammy.js/<%= vSammy %>/sammy.min.js',
                     dest: 'public/_assets/sammy/<%= vSammy %>/sammy.min.js'
+                },
+                'riot': {
+                    src: 'https://cdnjs.cloudflare.com/ajax/libs/riot/<%= vRiot %>/riot.min.js',
+                    dest: 'public/_assets/riot/<%= vRiot %>/riot.min.js'
+                },
+                'riot-compiler': {
+                    src: 'https://cdnjs.cloudflare.com/ajax/libs/riot/<%= vRiot %>/riot+compiler.min.js',
+                    dest: 'public/_assets/riot/<%= vRiot %>/riot-compiler.min.js'
                 },
                 'clipboard': {
                     src: 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/<%= vClipboard %>/clipboard.min.js',
@@ -149,6 +158,8 @@ module.exports = function (grunt) {
         'if-missing:curl:react-redux',
         'if-missing:curl:knockout',
         'if-missing:curl:sammy',
+        'if-missing:curl:riot',
+        'if-missing:curl:riot-compiler',
         'if-missing:curl:uikit',
         'if-missing:unzip:uikit',
         'if-missing:curl:sigma',

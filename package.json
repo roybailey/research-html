@@ -6,7 +6,7 @@
   "dependencies": {
   },
   "scripts": {
-    "start": "forever --watchDirectory public -w app.js"
+    "start": "http-server ."
   },
   "devDependencies": {
     "grunt": "0.4.5",
