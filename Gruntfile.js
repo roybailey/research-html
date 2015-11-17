@@ -18,6 +18,7 @@ module.exports = function (grunt) {
             vKnockout: "3.3.0",
             vSammy: "0.7.6",
             vRiot: "2.3.1",
+            vMithril: "0.2.0",
             vClipboard: "1.5.3",
             vUIKit: "2.23.0",
             vSigma: "1.0.3",
@@ -85,6 +86,10 @@ module.exports = function (grunt) {
                 'riot-compiler': {
                     src: 'https://cdnjs.cloudflare.com/ajax/libs/riot/<%= vRiot %>/riot+compiler.min.js',
                     dest: 'public/_assets/riot/<%= vRiot %>/riot-compiler.min.js'
+                },
+                'mithril': {
+                    src: 'https://cdnjs.cloudflare.com/ajax/libs/mithril/<%= vMithril %>/mithril.min.js',
+                    dest: 'public/_assets/mithril/<%= vMithril %>/mithril.min.js'
                 },
                 'clipboard': {
                     src: 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/<%= vClipboard %>/clipboard.min.js',
@@ -160,6 +165,7 @@ module.exports = function (grunt) {
         'if-missing:curl:sammy',
         'if-missing:curl:riot',
         'if-missing:curl:riot-compiler',
+        'if-missing:curl:mithril',
         'if-missing:curl:uikit',
         'if-missing:unzip:uikit',
         'if-missing:curl:sigma',
