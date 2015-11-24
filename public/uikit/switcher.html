@@ -1,0 +1,60 @@
+<html>
+<head>
+    <script src="../_assets/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="../_assets/uikit/uikit-2.23.0/css/uikit.min.css"/>
+    <script src="../_assets/uikit/uikit-2.23.0/js/uikit.min.js"></script>
+
+    <link rel="stylesheet" href="../_assets/uikit/uikit-2.23.0/css/components/sortable.min.css"/>
+    <script src="../_assets/uikit/uikit-2.23.0/js/components/sortable.min.js"></script>
+
+    <link rel="stylesheet" href="../_assets/uikit/uikit-2.23.0/css/components/progress.min.css"/>
+    <link rel="stylesheet" href="../_assets/uikit/uikit-2.23.0/css/components/upload.min.css"/>
+    <script src="../_assets/uikit/uikit-2.23.0/js/components/upload.min.js"></script>
+
+    <style>
+        .uk-panel {
+            border: 1px solid lightgrey;
+        }
+    </style>
+</head>
+<body>
+
+<div class="uk-container uk-container-center uk-margin-top">
+
+    <!-- This is the nav containing the toggling elements -->
+    <ul data-uk-switcher="{connect:'#my-id'}">
+        <li><a href="#">Any</a></li>
+        <li><a href="#">Some</a></li>
+        <li><a href="#">More</a></li>
+        <li><a href="#">Others</a></li>
+    </ul>
+
+    <!-- This is the container of the content items -->
+    <ul id="my-id" class="uk-switcher">
+        <div>
+            <li> Any.1 <a href="" data-uk-switcher-item="0">...</a></li>
+        </div>
+        <div>
+            <li> Some.1 <a href="" data-uk-switcher-item="1">...</a></li>
+            <li> Some.2 <a href="" data-uk-switcher-item="1">...</a></li>
+            <li> Some.3 <a href="" data-uk-switcher-item="1">...</a></li>
+        </div>
+        <div>
+            <li> More.1 <a href="" data-uk-switcher-item="2">...</a></li>
+            <li> More.2 <a href="" data-uk-switcher-item="2">...</a></li>
+        </div>
+        <div>
+            <li> Others.1 <a href="" data-uk-switcher-item="3">...</a></li>
+            <li> Others.2 <a href="" data-uk-switcher-item="3">...</a></li>
+            <li> Others.3 <a href="" data-uk-switcher-item="3">...</a></li>
+            <li> Others.4 <a href="" data-uk-switcher-item="3">...</a></li>
+        </div>
+    </ul>
+
+</div>
+
+<script language="JavaScript">
+</script>
+
+</body>
+</html>
