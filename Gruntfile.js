@@ -6,13 +6,14 @@ module.exports = function (grunt) {
     grunt.initConfig({
             pkg: grunt.file.readJSON('package.json'),
 
+            vBootstrap: "3.3.6",
             vD3: "3.5.7",
             vUnderscore: "1.8.3",
             vLoDash: "3.10.1",
             vShowdown: "0.3.1",
             vJQuery: "2.1.4",
             vJQueryUI: "1.11.4",
-            vBabel:"6.0.20",
+            vBabel: "6.0.20",
             vReact: "0.14.2",
             vReactRedux: "4.0.0",
             vKnockout: "3.3.0",
@@ -21,12 +22,17 @@ module.exports = function (grunt) {
             vMithril: "0.2.0",
             vClipboard: "1.5.3",
             vUIKit: "2.23.0",
+            vSemantic: "2.1.6",
             vSigma: "1.0.3",
             vCytoscape: "2.5.0",
             vAlchemy: "0.4.1",
             vLinkurious: "1.3.0",
 
             curl: {
+                'bootstrap': {
+                    src: 'https://github.com/twbs/bootstrap/releases/download/v<%= vBootstrap %>/bootstrap-<%= vBootstrap %>-dist.zip',
+                    dest: 'public/_assets/bootstrap-<%= vBootstrap %>-dist.zip'
+                },
                 'd3': {
                     src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/<%= vD3 %>/d3.min.js',
                     dest: 'public/_assets/d3/<%= vD3 %>/d3.min.js'
@@ -121,7 +127,22 @@ module.exports = function (grunt) {
                 }
             },
 
+            'curl-dir': {
+                'semantic': {
+                    src: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/<%= vSemantic %>/semantic.min.{js,css}',
+                    dest: 'public/_assets/semantic-ui/<%= vSemantic %>'
+                },
+                'semantic-theme-default': {
+                    src: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/<%= vSemantic %>/themes/default/assets/fonts/{icons.woff2,icons.svg}',
+                    dest: 'public/_assets/semantic-ui/<%= vSemantic %>/themes/default/assets/fonts'
+                }
+            },
+
             unzip: {
+                'bootstrap': {
+                    src: 'public/_assets/bootstrap-<%= vBootstrap %>-dist.zip',
+                    dest: 'public/_assets/bootstrap/'
+                },
                 'd3plus': {
                     src: 'public/_assets/d3plus.zip',
                     dest: 'public/_assets/d3plus/'
@@ -147,6 +168,8 @@ module.exports = function (grunt) {
     );
 
     grunt.registerTask('download', [
+        'if-missing:curl:bootstrap',
+        'if-missing:unzip:bootstrap',
         'if-missing:curl:d3',
         'if-missing:curl:d3plus',
         'if-missing:unzip:d3plus',
@@ -168,6 +191,8 @@ module.exports = function (grunt) {
         'if-missing:curl:mithril',
         'if-missing:curl:uikit',
         'if-missing:unzip:uikit',
+        'if-missing:curl-dir:semantic',
+        'if-missing:curl-dir:semantic-theme-default',
         'if-missing:curl:sigma',
         'if-missing:unzip:sigma',
         'if-missing:curl:sigma-plugins-cypher',

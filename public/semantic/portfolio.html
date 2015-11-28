@@ -1,0 +1,121 @@
+<html>
+<head>
+    <script src="../_assets/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../_assets/semantic-ui/2.1.6/semantic.min.js"></script>
+    <link rel="stylesheet" href="../_assets/semantic-ui/2.1.6/semantic.min.css"/>
+    <style>
+        .ui.tabular.menu .active.item {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Tabs</h1>
+
+<div class="ui segment">
+    <div class="ui top attached tabular menu">
+        <div class="item active" data-tab="one">One</div>
+        <div class="item" data-tab="two">Two</div>
+        <div class="item" data-tab="three">Three</div>
+    </div>
+    <div class="ui bottom attached tab segment active" data-tab="one">
+
+        <div class="ui cards">
+            <div class="card">
+                <div class="content">
+                    <i class="icon user right floated"></i>
+
+                    <div class="header">
+                        Elliot Fu
+                    </div>
+                    <div class="meta">
+                        Friends of Veronika
+                    </div>
+                    <div class="description">
+                        Elliot requested permission to view your contact details
+                    </div>
+                    <div class="description">
+                        <span class="right floated"><i class="heart outline like icon"></i>17 likes</span>
+                        <i class="comment icon"></i>3 comments
+                    </div>
+                    <div class="description">
+                        <a class="active teal item">
+                            Size/
+                            <div class="ui teal label right floated">XS</div>
+                        </a>
+                        <a class="item">
+                            Days/
+                            <div class="ui label right floated">240</div>
+                        </a>
+                        <a class="item">
+                            Date
+                            <div class="ui label right floated">JAN</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="extra content">
+                    <div class="ui two buttons">
+                        <div class="ui basic green button">Approve</div>
+                        <div class="ui basic red button">Decline</div>
+                    </div>
+                    <div class="ui transparent icon input">
+                        <input type="text" placeholder="Search mail...">
+                        <i class="search icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <img class="right floated mini ui image" src="/images/avatar/large/jenny.jpg">
+
+                    <div class="header">
+                        Jenny Hess
+                    </div>
+                    <div class="meta">
+                        New Member
+                    </div>
+                    <div class="description">
+                        Jenny wants to add you to the group <b>best friends</b>
+                    </div>
+                </div>
+                <div class="extra content">
+                    <div class="ui two buttons">
+                        <div class="ui basic green button">Approve</div>
+                        <div class="ui basic red button">Decline</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="two">
+        <p>
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+            Donec eu libero sit amet quam egestas semper.
+            Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+        </p>
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="three">
+        <p>
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+            Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
+            Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+            Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.
+            Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.
+            Donec non enim in turpis pulvinar facilisis. Ut felis.
+            Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.
+            Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+        </p>
+    </div>
+</div>
+
+<script>
+    $('.menu .item').tab();
+</script>
+
+
+</body>
+</html>
