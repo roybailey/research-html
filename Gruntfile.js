@@ -27,6 +27,7 @@ module.exports = function (grunt) {
             vCytoscape: "2.5.0",
             vAlchemy: "0.4.1",
             vLinkurious: "1.3.0",
+            vDropzone: "4.2.0",
 
             curl: {
                 'bootstrap': {
@@ -124,6 +125,10 @@ module.exports = function (grunt) {
                 'linkurious': {
                     src: 'https://cdnjs.cloudflare.com/ajax/libs/linkurious.js/<%= vLinkurious %>/sigma.min.js',
                     dest: 'public/_assets/linkurious.js/<%= vLinkurious %>/sigma.min.js'
+                },
+                'dropzone': {
+                    src: "https://cdnjs.cloudflare.com/ajax/libs/dropzone/<%= vDropzone %>/min/dropzone.min.js",
+                    dest: 'public/_assets/dropzone/<%= vDropzone %>/dropzone.min.js'
                 }
             },
 
@@ -198,7 +203,8 @@ module.exports = function (grunt) {
         'if-missing:curl:sigma-plugins-cypher',
         'if-missing:curl:alchemy',
         'if-missing:unzip:alchemy',
-        'if-missing:curl:cyposcape'
+        'if-missing:curl:cyposcape',
+        'if-missing:curl:dropzone'
     ]);
 }
 ;
