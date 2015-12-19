@@ -29,6 +29,7 @@ module.exports = function (grunt) {
             vLinkurious: "1.3.0",
             vDropzone: "4.2.0",
             vPapaParse: "4.1.2",
+            vSuperagent: "1.2.0",
 
             curl: {
                 'bootstrap': {
@@ -130,6 +131,10 @@ module.exports = function (grunt) {
                 'papaparse': {
                     src: "https://cdnjs.cloudflare.com/ajax/libs/PapaParse/<%= vPapaParse %>/papaparse.min.js",
                     dest: 'public/_assets/papaparse/<%= vPapaParse %>/papaparse.min.js'
+                },
+                'superagent': {
+                    src: 'https://cdnjs.cloudflare.com/ajax/libs/superagent/<%= vSuperagent %>/superagent.min.js',
+                    dest: 'public/_assets/superagent/<%= vSuperagent %>/superagent.min.js'
                 }
             },
 
@@ -210,6 +215,7 @@ module.exports = function (grunt) {
         'if-missing:unzip:alchemy',
         'if-missing:curl:cyposcape',
         'if-missing:curl:papaparse',
+        'if-missing:curl:superagent',
         'if-missing:curl-dir:dropzone'
     ]);
 }
