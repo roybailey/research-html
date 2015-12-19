@@ -147,6 +147,10 @@ module.exports = function (grunt) {
                     src: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/<%= vSemantic %>/themes/default/assets/fonts/{icons.woff2,icons.svg}',
                     dest: 'public/_assets/semantic-ui/<%= vSemantic %>/themes/default/assets/fonts'
                 },
+                'semantic-components': {
+                    src: 'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/<%= vSemantic %>/components/{progress.min.js,progress.min.css}',
+                    dest: 'public/_assets/semantic-ui/<%= vSemantic %>/components'
+                },
                 'dropzone': {
                     src: "https://cdnjs.cloudflare.com/ajax/libs/dropzone/<%= vDropzone %>/min/dropzone.min.{js,css}",
                     dest: 'public/_assets/dropzone/<%= vDropzone %>'
@@ -208,6 +212,7 @@ module.exports = function (grunt) {
         'if-missing:unzip:uikit',
         'if-missing:curl-dir:semantic',
         'if-missing:curl-dir:semantic-theme-default',
+        'if-missing:curl-dir:semantic-components',
         'if-missing:curl:sigma',
         'if-missing:unzip:sigma',
         'if-missing:curl:sigma-plugins-cypher',

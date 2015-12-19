@@ -1,0 +1,125 @@
+<html>
+<head>
+    <script src="../_assets/d3/3.5.7/d3.min.js"></script>
+    <script src="../_assets/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../_assets/semantic-ui/2.1.6/semantic.min.js"></script>
+    <link rel="stylesheet" href="../_assets/semantic-ui/2.1.6/semantic.min.css"/>
+    <style>
+        hr {
+            margin: 1cm;
+        }
+    </style>
+</head>
+<body>
+
+<hr />
+
+<div class="ui teal progress" data-percent="74" id="example1">
+    <div class="bar"></div>
+    <div class="label">74% Funded</div>
+</div>
+<script>
+    $('#example1').progress();
+</script>
+
+<hr />
+
+<div class="ui teal progress" id="example2">
+    <div class="bar"></div>
+    <div class="label">22% Earned</div>
+</div>
+<script>
+    $('#example2').progress({
+        percent: 75
+    });
+    d3.select('#example2').selectAll('.label').text('75% Completed');
+</script>
+
+<hr />
+
+<div class="ui teal progress" id="example3">
+    <div class="bar">
+        <div class="progress"></div>
+    </div>
+    <div class="label">Using total meta data with increment</div>
+</div>
+<script>
+    $('#example3').progress({
+        total: 3
+    });
+    $('#example3').progress('increment');
+</script>
+
+<hr />
+
+<div class="ui indicating progress" data-value="0" data-total="20" id="example4">
+    <div class="bar">
+        <div class="progress"></div>
+    </div>
+    <div class="label">Predefined total of 20, increment 5 times</div>
+</div>
+<script>
+    [1, 2, 3, 4, 5].forEach(function () {
+        $('#example4').progress('increment');
+    });
+</script>
+
+<hr />
+<div class="ui indicating progress" data-value="1" data-total="3" id="example5">
+    <div class="bar"></div>
+    <div class="label">Adding Photos</div>
+</div>
+<script>
+    $('#example5').progress('increment');
+    $('#example5').progress('increment');
+    $('#example5')
+            .progress({
+                text: {
+                    active: 'Adding {value} of {total} photos',
+                    success: '{total} Photos Uploaded!'
+                }
+            })
+    ;
+</script>
+
+<hr />
+<div class="ui segment">
+    <div class="ui top attached progress" data-percent="50" id="example6">
+        <div class="bar"></div>
+    </div>
+    <p>Progress bar attached to top and bottom</p>
+    <div class="ui bottom attached progress" data-value="75" data-total="100" id="example7">
+        <div class="bar"></div>
+    </div>
+</div>
+<script>
+    $('#example6').progress();
+    $('#example7').progress();
+</script>
+
+<hr />
+<div class="ui card">
+    <div class="content">
+        <a class="header">Project</a>
+        <div class="meta">
+            <span class="date">Started in 2014</span>
+        </div>
+    </div>
+    <div class="extra content">
+        <a>
+            <i class="user icon"></i>
+            22 Friends
+        </a>
+    </div>
+    <div class="ui bottom attached progress" data-percent="75" id="example8">
+        <div class="bar"></div>
+    </div>
+</div>
+<script>
+    $('#example8').progress();
+</script>
+
+<hr />
+
+</body>
+</html>
