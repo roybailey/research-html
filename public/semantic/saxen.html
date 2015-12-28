@@ -1,0 +1,44 @@
+<html>
+<head>
+    <script src="../_assets/d3/3.5.7/d3.min.js"></script>
+    <script src="../_assets/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../_assets/semantic-ui/2.1.6/semantic.min.js"></script>
+    <link rel="stylesheet" href="../_assets/semantic-ui/2.1.6/semantic.min.css"/>
+    <style>
+        hr {
+            margin: 1cm;
+        }
+    </style>
+</head>
+<body>
+
+<hr />
+
+<hr />
+<div class="ui indicating progress" data-value="1" data-total="1000" id="example5">
+    <div class="bar"></div>
+    <div class="label">Adding Photos</div>
+</div>
+<script>
+    $('#example5')
+            .progress({
+                text: {
+                    active: 'Thinking...{value} of {total}',
+                    success: 'Saxen is Awesome!'
+                }
+            });
+
+    var count = 0;
+    function update() {
+        ++count;
+        $('#example5').progress('increment');
+        if(count < 1000) {
+            setTimeout(update, 10);
+        }
+    }
+    update();
+
+</script>
+
+</body>
+</html>
