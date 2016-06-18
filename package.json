@@ -1,28 +1,34 @@
 {
   "name": "research-html",
-  "version": "0.0.0",
-  "description": "Research HTML5",
-  "main": "app.js",
-  "dependencies": {
-  },
-  "scripts": {
-    "start": "http-server .",
-    "8181": "http-server . -p 8181"
-  },
-  "devDependencies": {
-    "grunt": "0.4.5",
-    "grunt-curl": "2.2.0",
-    "grunt-if-missing": "1.0.0",
-    "grunt-zip": "0.17.1"
-  },
+  "version": "1.0.0",
+  "author": "Roy Bailey",
+  "description": "HTML and HTML generating samples",
+  "license": "MIT",
+  "main": "react-compile.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/roybailey/research-html.git"
   },
-  "author": "Roy Bailey",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/roybailey/research-html/issues"
   },
-  "homepage": "https://github.com/roybailey/research-html"
+  "homepage": "https://github.com/roybailey",
+  "scripts": {
+    "react-static": "babel --presets react public/react-static/src/*.jsx --out-dir public/react-static/lib"
+  },
+  "devDependencies": {
+    "babel-cli": "6.6.5",
+    "babel-core": "^6.4.0",
+    "babel-loader": "^6.2.1",
+    "babel-plugin-transform-react-jsx": "6.8.0",
+    "babel-plugin-transform-runtime": "^6.4.3",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "babel-runtime": "^6.3.19",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "webpack": "1.13.1"
+  }
 }

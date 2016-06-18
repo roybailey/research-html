@@ -13,8 +13,10 @@
     </p>
 </div>
 
-<script src="../_assets/react/0.14.2/react.js"></script>
-<script src="../_assets/react/0.14.2/react-dom.js"></script>
+<!-- The core React library -->
+<script src="https://fb.me/react-15.1.0.js"></script>
+<!-- The ReactDOM Library -->
+<script src="https://fb.me/react-dom-15.1.0.js"></script>
 <script src="assets/JSXTransformer.js"></script>
 <script type="text/jsx">
     // ------------------------------------------------------------
@@ -51,7 +53,7 @@
             var items = config.map(function (item) {
                 return (
                         <li className="navigation__item">
-                            <a className="navigation__link" href={ item.href }>
+                            <a className="navigation__link" href={ item.href } key={ item.href }>
                         { item.text }
                             </a>
                         </li>
