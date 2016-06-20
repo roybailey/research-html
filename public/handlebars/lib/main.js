@@ -19,4 +19,6 @@ var _MainMenu2 = _interopRequireDefault(_MainMenu);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log(_server2.default.renderToStaticMarkup(_react2.default.createElement(_MainMenu2.default, null)));
+var menu = [{ href: "/", title: "Home" }, { href: "/services", title: "Services" }, { href: "/contact", title: "Conact Us" }, { href: "/about", title: "About" }];
+
+module.exports = _server2.default.renderToStaticMarkup(_react2.default.createElement(_MainMenu2.default, { menu: menu }));
