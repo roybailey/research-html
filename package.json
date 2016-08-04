@@ -14,7 +14,8 @@
   },
   "homepage": "https://github.com/roybailey",
   "scripts": {
-    "react-static": "babel --presets react public/react-static/src/*.jsx --out-dir public/react-static/lib"
+    "react-static": "babel --presets react public/react-static/src/*.jsx --out-dir public/react-static/lib",
+    "start": "http-server . -p 8181"
   },
   "devDependencies": {
     "babel-cli": "6.6.5",
