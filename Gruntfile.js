@@ -18,7 +18,7 @@ module.exports = function (grunt) {
             vReactRedux: "4.0.0",
             vKnockout: "3.3.0",
             vSammy: "0.7.6",
-            vRiot: "2.3.1",
+            vRiot: "2.6.4",
             vMithril: "0.2.0",
             vClipboard: "1.5.3",
             vUIKit: "2.23.0",
