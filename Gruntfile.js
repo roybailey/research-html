@@ -215,7 +215,7 @@ module.exports = function (grunt) {
         'if-missing:curl-dir:semantic-components',
         'if-missing:curl:sigma',
         'if-missing:unzip:sigma',
-        'if-missing:curl:sigma-plugins-cypher',
+        //'if-missing:curl:sigma-plugins-cypher', NOT FOUND
         'if-missing:curl:alchemy',
         'if-missing:unzip:alchemy',
         'if-missing:curl:cyposcape',
