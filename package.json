@@ -35,5 +35,8 @@
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "webpack": "1.13.1"
+  },
+  "dependencies": {
+    "mermaid": "^7.0.3"
   }
 }
