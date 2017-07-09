@@ -9,6 +9,7 @@ module.exports = function (grunt) {
             vBootstrap: "3.3.6",
             vD3: "3.5.7",
             vUnderscore: "1.8.3",
+            vD3v4: "4.9.1",
             vLoDash: "3.10.1",
             vShowdown: "0.3.1",
             vJQuery: "2.1.4",
@@ -43,6 +44,10 @@ module.exports = function (grunt) {
                 'd3plus': {
                     src: "http://d3plus.org/d3plus.zip",
                     dest: 'public/_assets/d3plus.zip'
+                },
+                'd3v4': {
+                    src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/<%= vD3v4 %>/d3.min.js',
+                    dest: 'public/_assets/d3/<%= vD3v4 %>/d3.min.js'
                 },
                 'underscore': {
                     src: 'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/<%= vUnderscore %>/underscore-min.js',
@@ -192,6 +197,7 @@ module.exports = function (grunt) {
         'if-missing:curl:d3',
         'if-missing:curl:d3plus',
         'if-missing:unzip:d3plus',
+        'if-missing:curl:d3v4',
         'if-missing:curl:underscore',
         'if-missing:curl:clipboard',
         'if-missing:curl:lodash',
