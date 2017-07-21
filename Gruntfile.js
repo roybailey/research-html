@@ -31,6 +31,8 @@ module.exports = function (grunt) {
             vDropzone: "4.2.0",
             vPapaParse: "4.1.2",
             vSuperagent: "1.2.0",
+            vVis: "4.20.1",
+            vChartJS: "2.6.0",
 
             curl: {
                 'bootstrap': {
@@ -140,6 +142,10 @@ module.exports = function (grunt) {
                 'superagent': {
                     src: 'https://cdnjs.cloudflare.com/ajax/libs/superagent/<%= vSuperagent %>/superagent.min.js',
                     dest: 'public/_assets/superagent/<%= vSuperagent %>/superagent.min.js'
+                },
+                'chartjs': {
+                    src: 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/<%= vChartJS %>/Chart.bundle.js',
+                    dest: 'public/_assets/chartjs/<%= vChartJS %>/Chart.bundle.js'
                 }
             },
 
@@ -159,6 +165,10 @@ module.exports = function (grunt) {
                 'dropzone': {
                     src: "https://cdnjs.cloudflare.com/ajax/libs/dropzone/<%= vDropzone %>/min/dropzone.min.{js,css}",
                     dest: 'public/_assets/dropzone/<%= vDropzone %>'
+                },
+                'vis': {
+                    src: 'https://cdnjs.cloudflare.com/ajax/libs/vis/<%= vVis %>/vis.min.{js,css}',
+                    dest: 'public/_assets/vis/<%= vVis %>'
                 }
             },
 
@@ -227,7 +237,9 @@ module.exports = function (grunt) {
         'if-missing:curl:cyposcape',
         'if-missing:curl:papaparse',
         'if-missing:curl:superagent',
-        'if-missing:curl-dir:dropzone'
+        'if-missing:curl-dir:dropzone',
+        'if-missing:curl-dir:vis',
+        'if-missing:curl:chartjs'
     ]);
 }
 ;
