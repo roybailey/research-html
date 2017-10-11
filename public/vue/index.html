@@ -1,0 +1,30 @@
+<html>
+<head>
+
+</head>
+<body>
+<div id="app">
+
+    <h4>{{ title }}</h4>
+    <p>
+        This is some text under the title
+    </p>
+
+</div>
+<script src="./vue.min.js"></script>
+<script>
+
+// Our data object
+var data = {
+    title: "Hello Vue World!"
+}
+// The object is added to a Vue instance
+var vm = new Vue({
+  el: '#app',
+  data: data
+})
+
+
+</script>
+</body>
+</html>

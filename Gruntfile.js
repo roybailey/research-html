@@ -23,7 +23,7 @@ module.exports = function (grunt) {
             vMithril: "0.2.0",
             vClipboard: "1.5.3",
             vUIKit: "2.23.0",
-            vSemantic: "2.1.6",
+            vSemantic: "2.2.13",
             vSigma: "1.0.3",
             vCytoscape: "2.5.0",
             vAlchemy: "0.4.1",
