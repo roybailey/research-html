@@ -11,8 +11,7 @@ what                     | description
 -------------------------|------------
 `npm install`            | to install Grunt 
 `grunt download`         | to download all the assets referenced in the code (so they work offline)
-`http-server public`     | to run local http server for running the site
-`http://localhost:8080`  | straight directory list for you to explore
+`npm start`              | starts http server on port 8181 for local viewing
 
 #### Sample pages
 

@@ -1,0 +1,88 @@
+<html>
+<head>
+    <title>CSS Design - Grid</title>
+    <style>
+
+    :root {
+        box-sizing: border-box;
+    }
+    *,
+    ::before,
+    ::after {
+        box-sizing: inherit;
+    }
+    body {
+        background-color: #709b90;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .grid {
+        display: grid;
+        margin: 1em;
+    }
+    .grid-equal {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 0.5em;
+    }
+    .grid-mixin {
+        grid-template-columns: 1fr 1fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 0.5em;
+    }
+    .grid > * {
+        background-color: darkgray;
+        color: white;
+        padding: 2em;
+        border-radius: 0.5em;
+    }
+    .grid-repeat-321 {
+        grid-template-columns: repeat(3, 2fr 1fr);
+        grid-gap: 0.5em;
+    }
+    .grid-repeat-3fr {
+        grid-template-columns: 1fr repeat(4, 3fr) 1fr;
+        grid-gap: 0.5em;
+    }
+    </style>
+</head>
+<body>
+
+<div class="grid grid-equal">
+    <div class="a">1fr</div>
+    <div class="b">1fr</div>
+    <div class="c">1fr</div>
+    <div class="d">1fr</div>
+    <div class="e">1fr</div>
+    <div class="f">1fr</div>
+</div>
+
+<div class="grid grid-mixin">
+    <div class="a">1fr</div>
+    <div class="b">1fr</div>
+    <div class="c">2fr</div>
+    <div class="d">1fr</div>
+    <div class="e">1fr</div>
+    <div class="f">2fr</div>
+</div>
+
+<div class="grid grid-repeat-321">
+    <div class="a">2fr</div>
+    <div class="b">1fr</div>
+    <div class="c">2fr</div>
+    <div class="d">1fr</div>
+    <div class="e">2fr</div>
+    <div class="f">1fr</div>
+</div>
+
+<div class="grid grid-repeat-3fr">
+    <div class="a">1fr</div>
+    <div class="b">3fr</div>
+    <div class="c">3fr</div>
+    <div class="d">3fr</div>
+    <div class="e">3fr</div>
+    <div class="f">1fr</div>
+</div>
+
+</body>
+</html>

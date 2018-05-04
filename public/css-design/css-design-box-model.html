@@ -1,0 +1,162 @@
+<html>
+<head>
+    <title>CSS Design - Box Model</title>
+
+    <style type="text/css">
+
+        :root {
+            box-sizing: border-box;
+        }
+
+        *,
+        ::before,
+        ::after {
+            box-sizing: inherit;
+        }
+
+        body {
+            background-color: #eee;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        body * + * {
+            margin-top: 1.5em;
+        }
+
+        .segment {
+            margin-off: 3rem 0 3rem 0;
+        }
+
+        header {
+            color: #fff;
+            background-color: #0072b0;
+            border-radius: .5em;
+        }
+
+        .table-wrapper {
+            margin-left: -1.5em;
+            margin-right: -1.5em;
+        }
+
+        .table-container {
+            display: table;
+            width: 100%;
+            vertical-align: middle;
+            border-spacing: 1.5em 0;
+        }
+
+        .table-main {
+            display: table-cell;
+            width: 70%;
+            background-color: white;
+            border-radius: 0.5em;
+        }
+
+        .table-sidebar {
+            display: table-cell;
+            width: 30%;
+            padding: 1.5em;
+            margin-left-off: 1.5em;
+            background-color: white;
+            border-radius: 0.5em;
+        }
+
+        .flex-container {
+            display: flex;
+        }
+
+        .flex-main {
+            width: 70%;
+            padding: 1em 1.5em;
+            background-color: white;
+            border-radius: 0.5em;
+        }
+
+        .flex-sidebar {
+            width: 30%;
+            padding: 1.5em;
+            margin-top: 0;
+            margin-left: 1.5em;
+            background-color: white;
+            border-radius: 0.5em;
+        }
+
+        .button-link {
+            display: block;
+            padding: 0.5em;
+            color: #fff;
+            background-color: #0090C9;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .button-link + .button-link {
+            margin-top: 1.5em;
+        }
+
+        .sponsor-link {
+            display: block;
+            color: #0072b0;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sample Web Layout</h1>
+</header>
+
+<div class="segment">
+     <div class="table-wrapper">
+        <div class="table-container">
+            <main class="table-main">
+                <h2>The main event!</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </main>
+            <aside class="table-sidebar">
+                <div class="widget">W1</div>
+                <div class="widget">W2</div>
+                <div class="gizmo">G1</div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+<div class="segment">
+    <div class="flex-container">
+        <main class="flex-main">
+            <h2>The main event!</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </main>
+        <aside class="flex-sidebar">
+            <a href="/twitter" class="button-link">
+                follow us on Twitter
+            </a>
+            <a href="/facebook" class="button-link">
+                like us on Facebook
+            </a>
+            <a href="/sponsors" class="sponsor-link">
+                become a sponsor
+            </a>
+        </aside>
+    </div>
+</div>
+
+</body>
+</html>
