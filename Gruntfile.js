@@ -10,7 +10,7 @@ module.exports = function (grunt) {
             vD3: "3.5.7",
             vUnderscore: "1.8.3",
             vD3v4: "4.9.1",
-            vLoDash: "3.10.1",
+            vLoDash: "4.17.12",
             vShowdown: "0.3.1",
             vJQuery: "2.1.4",
             vJQueryUI: "1.11.4",

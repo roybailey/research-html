@@ -18,7 +18,7 @@
     "start": "http-server -c-1 . -p 8181"
   },
   "devDependencies": {
-    "babel-cli": "6.6.5",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.4.0",
     "babel-loader": "^6.2.1",
     "babel-plugin-transform-react-jsx": "6.8.0",
@@ -34,9 +34,9 @@
     "grunt-zip": "^0.17.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
-    "webpack": "1.13.1"
+    "webpack": "^4.43.0"
   },
   "dependencies": {
-    "mermaid": "^7.0.3"
+    "mermaid": "^8.6.2"
   }
 }
