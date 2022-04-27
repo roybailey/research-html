@@ -28,7 +28,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "babel-runtime": "^6.3.19",
-    "grunt": "^1.0.1",
+    "grunt": "^1.5.2",
     "grunt-curl": "^2.2.0",
     "grunt-if-missing": "^1.0.1",
     "grunt-zip": "^0.17.1",
