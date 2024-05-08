@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="EN">
+<head>
+    <title>Transform Samples</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background: #f7ecb5;
+            font-family: 'Lato', sans-serif;
+        }
+
+        section {
+            margin: auto;
+            height: 400px;
+            width: 300px;
+            border: red solid 1px;
+        }
+
+        .square {
+            position: absolute;
+            margin-top: 50px;
+            margin-left: 50px;
+            width: 200px;
+            height: 200px;
+            background-color: #0E566C;
+        }
+        .first-translate {
+            transform: translate(-50px,-25px);
+            background-color: red;
+        }
+        .second-translate {
+            transform: translate(50px,25px);
+            background-color: red;
+        }
+        .third-translate {
+            transform: translateX(50px);
+            background-color: red;
+        }
+        .forth-translate {
+            transform: translateY(50px);
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <h2>translate(-50px,-25px)</h2>
+    <div class="square"></div>
+    <div class="square first-translate"></div>
+</section>
+
+<section>
+    <h2>translate(50px,25px)</h2>
+    <div class="square"></div>
+    <div class="square second-translate"></div>
+</section>
+
+<section>
+    <h2>translateX(50px)</h2>
+    <div class="square"></div>
+    <div class="square third-translate"></div>
+</section>
+
+<section>
+    <h2>translateY(50px)</h2>
+    <div class="square"></div>
+    <div class="square forth-translate"></div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="EN">
+<head>
+    <title>Transform Samples</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background: #f7ecb5;
+            font-family: 'Lato', sans-serif;
+        }
+
+        section {
+            margin: auto;
+            height: 400px;
+            width: 300px;
+            border: red solid 1px;
+        }
+
+        .square {
+            position: absolute;
+            margin-top: 50px;
+            margin-left: 50px;
+            width: 200px;
+            height: 200px;
+            background-color: #0E566C;
+        }
+        .one-sixteenth {
+            transform: rotate(0.0625turn);
+        }
+        .two-sixteenth {
+            transform: rotate(0.125turn);
+        }
+        .three-sixteenth {
+            transform: rotate(0.1875turn);
+        }
+        .twenty-one-degrees {
+            transform: rotate(21deg);
+        }
+        .forty-two-degrees {
+            transform: rotate(42deg);
+        }
+        .sixty-three-degrees {
+            transform: rotate(63deg);
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <h2>rotate (one,two,three sixteenth turn)</h2>
+    <div class="square"></div>
+    <div class="square one-sixteenth"></div>
+    <div class="square two-sixteenth"></div>
+    <div class="square three-sixteenth"></div>
+</section>
+<section>
+    <h2>rotate (21,42,63 deg)</h2>
+    <div class="square"></div>
+    <div class="square twenty-one-degrees"></div>
+    <div class="square forty-two-degrees"></div>
+    <div class="square sixty-three-degrees"></div>
+</section>
+
+</body>
+</html>

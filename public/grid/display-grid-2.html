@@ -1,0 +1,27 @@
+<html>
+<head>
+    <style>
+        #config  {
+            display: grid;
+            grid-template-areas:
+                    "a a"
+                    ". b"
+                    "c .";
+            grid-template-columns: 2fr 1fr;
+        }
+
+        #foo { grid-area: a }
+        #bar { grid-area: b }
+        #baz { grid-area: c }
+    </style>
+</head>
+<body>
+
+<div id="config">
+    <div id="foo" style="background-color: aqua;">Foo</div>
+    <div id="bar" style="background-color: hotpink;">Bar</div>
+    <div id="baz" style="background-color: olive;">Baz</div>
+</div>
+
+</body>
+</html>

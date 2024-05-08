@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <title>Transform Samples</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #333;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .card {
+            margin: auto;
+            max-width: 30rem;
+            text-align: center;
+            color: steelblue;
+            background-color: antiquewhite;
+            /*position: absolute;*/
+            /*top: 50%;*/
+            /*left: 50%;*/
+            -ms-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        .card__image img {
+            width: 100%;
+        }
+
+        .card__body {
+            color: steelblue;
+            width: 100%;
+        }
+
+        .card__footer {
+            color: steelblue;
+            font-size: 75%;
+        }
+
+        .card h4 {
+            color: midnightblue;
+            font-size: 200%;
+        }
+
+        .card button {
+            background-color: steelblue;
+            border: none;
+        }
+
+        .card button:hover {
+            background-color: cornflowerblue;
+            border: none;
+        }
+
+        .card ul {
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <div class="card">
+        <div class="card__image">
+            <img
+                    src="../_assets/img/1.jpg"
+                    alt="sample image"
+                    title="Sample Image"/>
+        </div>
+        <div class="card__body">
+            <h4>Sample Card</h4>
+            <small>
+                Einstein said:
+                "any intelligent fool can make things bigger, more complex, more violence;
+                but it takes a touch of genius and lots of courage to move something in the opposite direction"
+            </small>
+        </div>
+        <div class="card__footer">
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

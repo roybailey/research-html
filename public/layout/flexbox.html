@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="EN">
+<head>
+    <title>Flexbox Layout Samples</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: whitesmoke;
+            font-family: 'Lato', sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            align-content: space-evenly;
+            justify-content: center;
+            gap: 1rem;
+            /*max-width: 800px;*/
+            /*min-height: 400px;*/
+            margin-inline: auto;
+            border: 1px solid black;
+        }
+        .box {
+            /*min-width: 200px;*/
+            /*height: 100px;*/
+            background-color: #1e77ba;
+            font-size: 2em;
+            padding: 0.5rem;
+
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+
+            flex: 1 1 200px;
+            /*flex-basis: 200px;*/
+            /*flex-shrink: 1;*/
+        }
+    </style>
+</head>
+<body>
+
+<main class="container">
+
+    <div class="box">
+        <h2>one</h2>
+    </div>
+
+    <div class="box">
+        <h2>two</h2>
+        <p class="digit">02</p>
+        <p>footer</p>
+    </div>
+
+    <div class="box">
+        <h2>three</h2>
+        <p class="digit">03</p>
+    </div>
+
+    <div class="box">
+        <h2>four</h2>
+        <p class="digit">04</p>
+        <p>footer</p>
+    </div>
+
+    <div class="box">
+        <h2>five</h2>
+        <p class="digit">05</p>
+    </div>
+
+    <div class="box">
+        <h2>six</h2>
+        <p class="digit">06</p>
+        <p>footer</p>
+    </div>
+
+</main>
+
+</body>
+</html>
+
+
+
+
+

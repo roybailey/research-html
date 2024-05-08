@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="EN">
+<head>
+    <title>Transform Samples</title>
+    <style>
+        li {
+            padding: 1em;
+            font-size: 200%;
+            background-color: beige;
+            color: darkblue;
+            list-style: none;
+            width: 10em;
+        }
+        .active {
+            background-color: darkblue;
+            color: beige;
+            transition-duration: 2s;
+        }
+        .count {
+            opacity: 0;
+            padding-right: 60%;
+            float: right;
+        }
+        li.active .count {
+            opacity: 1;
+            padding-right: 0;
+            /* transition: opacity 2s 2s, padding-right 4s 1s */
+            transition-duration: 2s, 4s;
+            transition-delay: 2s, 1s;
+            transition-property: opacity, padding-right;
+        }
+    </style>
+    <script>
+        function toggleClass(element,className) {
+            var listContainer = element.parentNode;
+            var items = listContainer.getElementsByTagName(element.nodeName);
+            for (var i = 0; i < items.length; i++) {
+                items[i].classList.remove(className)
+            }
+            (element).classList.add(className);
+        }
+    </script>
+</head>
+<body>
+
+<code>using transition-duration: 2s; on active class toggle</code>
+<ul id="menu">
+    <li class="active" onclick="toggleClass(this,'active')">
+        <span>ONE</span>
+        <span class="count">1</span>
+    </li>
+    <li onclick="toggleClass(this,'active')">
+        <span>TWO</span>
+        <span class="count">2</span>
+    </li>
+    <li onclick="toggleClass(this,'active')">
+        <span>THREE</span>
+        <span class="count">3</span>
+    </li>
+    <li onclick="toggleClass(this,'active')">
+        <span>FOUR</span>
+        <span class="count">4</span>
+    </li>
+    <li onclick="toggleClass(this,'active')">
+        <span>FIVE</span>
+        <span class="count">5</span>
+    </li>
+</ul>
+
+</body>
+</html>

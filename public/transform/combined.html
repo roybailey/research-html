@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="EN">
+<head>
+    <title>Transform Samples</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background: #f7ecb5;
+            font-family: 'Lato', sans-serif;
+        }
+
+        section {
+            margin: auto;
+            height: 400px;
+            width: 300px;
+            border: red solid 1px;
+        }
+
+        .square {
+            position: absolute;
+            margin-top: 50px;
+            margin-left: 50px;
+            width: 200px;
+            height: 200px;
+            background-color: #0E566C;
+        }
+        .first-skew {
+            transform: skew(20deg,5deg) translate(300px,100px) rotate(15deg) scale(0.5);
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <h2>skew(20deg,5deg) translate(300px,100px) rotate(15deg) scale(0.5)</h2>
+    <div class="square"></div>
+    <div class="square first-skew"></div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="EN">
+<head>
+    <title>Transform Samples</title>
+    <style>
+        .box {
+            width: 50%;
+            font-size: 300%;
+            background: red;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+        }
+        .box:hover {
+            padding: 30px;
+            background-color: green;
+            cursor: pointer;
+        }
+
+        .box-1 {
+            transition: background-color 2s ease, padding 2s ease;
+        }
+        .box-2 {
+            transition: background-color 2s linear, padding 2s linear;
+        }
+        .box-3 {
+            transition: background-color 2s ease-in, padding 2s ease-in;
+        }
+        .box-4 {
+            transition: background-color 2s ease-out, padding 2s ease-out;
+        }
+        .box-5 {
+            transition: background-color 2s ease-in-out, padding 2s ease-in-out;
+        }
+        .box-6 {
+            transition: background-color 2s steps(4, start), padding 2s steps(4, start);
+        }
+        .box-7 {
+            transition: background-color 2s steps(4, end), padding 2s steps(4, end);
+        }
+    </style>
+</head>
+<body>
+
+<div class="box box-1">
+    transition: background-color 2s ease, padding 2s ease;
+</div>
+
+<div class="box box-2">
+    transition: background-color 2s linear, padding 2s linear;
+</div>
+
+<div class="box box-3">
+    transition: background-color 2s ease-in, padding 2s ease-in;
+</div>
+
+<div class="box box-4">
+    transition: background-color 2s ease-out, padding 2s ease-out;
+</div>
+
+<div class="box box-5">
+    transition: background-color 2s ease-in-out, padding 2s ease-in-out;
+</div>
+
+<div class="box box-6">
+    transition: background-color 2s steps(4, start), padding 2s steps(4, start);
+</div>
+
+<div class="box box-7">
+    transition: background-color 2s steps(4, end), padding 2s steps(4, end);
+</div>
+
+</body>
+</html>
