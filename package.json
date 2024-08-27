@@ -34,7 +34,7 @@
     "grunt-zip": "^0.17.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
-    "webpack": "^4.43.0"
+    "webpack": "^5.94.0"
   },
   "dependencies": {
     "mermaid": "^8.6.2"
